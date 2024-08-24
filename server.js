@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const path = require('path');
 
 // Serve static files from the "public" directory
 app.use(express.static('public'));
@@ -24,12 +25,18 @@ app.post('/submit', (req, res) => {
     });
 });
 
+// Serve data.txt file
+app.get('/data.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'data.txt'));
+});
+
 // Basic route to confirm the server is running
 app.get('/', (req, res) => {
     res.send('Server is up and running!');
 });
 
 // Start the server
-app.listen(4000, () => {
-    console.log('Server is running on http://localhost:4000');
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
