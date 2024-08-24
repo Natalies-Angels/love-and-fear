@@ -1,0 +1,66 @@
+.popup
+{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background-color: #fefefe;
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    /* width: 200px; Width of the popup */
+}
+.question-buttons {
+    /* padding: 160px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 120px);
+    gap: 40px;
+    justify-items: center;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#button-1 { grid-column: 2; }
+#button-2 { grid-column: 1; grid-row: 2; }
+#button-3 { grid-column: 2; grid-row: 2; }
+#button-4 { grid-column: 3; grid-row: 2; }
+#button-5 { grid-column: 2; grid-row: 3; }
+#button-6 { grid-column: 1; grid-row: 4; }
+#button-7 { grid-column: 2; grid-row: 4; }
+#button-8 { grid-column: 3; grid-row: 4; }
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+        .bingo-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .bingo-table th, .bingo-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .bingo-table th {
+            background-color: #f2f2f2;
+        }
+        .bingo-cell {
+            vertical-align: top;
+        }
+
+/* #button-1 { background-image: url('images/ball1.png'); }
+#button-2 { background-image: url('images/ball2.png'); }
+#button-3 { background-image: url('images/ball3.png'); }
+#button-4 { background-image: url('images/ball4.png'); }
+#button-5 { background-image: url('images/ball5.png'); }
+#button-6 { background-image: url('images/ball6.png'); }
+#button-7 { background-image: url('images/ball7.png'); }
+#button-8 { background-image: url('images/ball8.png'); } */
