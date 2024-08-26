@@ -204,22 +204,20 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 100px);
         gap: 20px;
-        max-width: 500px;
+        max-width: 90%; /* Adjusted max-width to be more responsive */
         margin: 20px auto;
-        padding: 0 10px; /* Add some padding to prevent overflow */
+        padding: 0; /* Ensure no padding that could cause overflow */
     }
 }
 
 @media (max-width: 576px) {
     .question-buttons {
-        
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 100px);
         gap: 10px;
-        max-width: 50%; /* Ensure the width is responsive */
+        max-width: 90%; /* Make sure the width is responsive */
         margin: 10px auto; /* Center the container */
-        padding: 0 30px; /* Increase padding to prevent overflow */
-
+        padding: 0; /* Remove extra padding to prevent overflow */
     }
 
     button {
