@@ -231,7 +231,7 @@ textarea {
     }
     #button-4, #button-5
     {
-        transform: translateX(-10px);
+        transform: translateX(10px);
     }
 }
 
