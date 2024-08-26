@@ -217,8 +217,9 @@ textarea {
         grid-template-rows: repeat(8, 100px);
         gap: 10px;
         max-width: 50%; /* Ensure the width is responsive */
-        margin: 0 auto; /* Center the container */
-        padding: 0 20px; /* Increase padding to prevent overflow */
+        margin: 10px auto; /* Center the container */
+        padding: 0 30px; /* Increase padding to prevent overflow */
+
     }
 
     button {
