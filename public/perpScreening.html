@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holistic Abuse Awareness & Perpetrator Identification Assessment</title>
+    <link rel="stylesheet" href="perpScreeningStyle.css">
+</head>
+<body>
+    <form id="assessment-form">
+        <!-- Section 1: Physical Aggression -->
+        <div class="form-section" id="section1">
+            <h2>Section 1: Physical Aggression</h2>
+            <div class="question">
+                <label>1. How do you choose to channel your anger or frustration physically?</label>
+                <select name="physical_expression">
+                    <option value="i">Seek healthy outlets like exercise.</option>
+                    <option value="ii">Engage in physical harm or violence.</option>
+                    <option value="iii">Use physical intimidation to assert dominance.</option>
+                    <option value="iv">None of the above.</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label>2. In moments of conflict, assess how often you resort to physical aggression:</label>
+                <input type="range" name="frequency_physical_aggression" min="1" max="5">
+            </div>
+            
+            <div class="question">
+                <label>3. Can you recall a specific instance where you felt the need to use physical aggression in a conflict? Describe how you handled it.</label>
+                <select name="instance_physical_aggression">
+                    <option value="i">I handled it by seeking a time-out to cool down.</option>
+                    <option value="ii">I engaged in physical aggression and regretted it afterward.</option>
+                    <option value="iii">No, I have not encountered such a situation.</option>
+                    <option value="iv">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>4. Reflecting on your responses, which kind of perpetrator do you identify with the most?</label>
+                <select name="perpetrator_physical">
+                    <option value="i">Physical Aggressor</option>
+                    <option value="ii">Observer</option>
+                    <option value="iii">Remorseful Perpetrator</option>
+                    <option value="iv">Non-Offender</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="nextSection(2)">Next</button>
+        </div>
+
+        <!-- Section 2: Verbal Abuse -->
+        <div class="form-section" id="section2">
+            <h2>Section 2: Verbal Abuse</h2>
+            <div class="question">
+                <label>5. How do you typically express yourself verbally when faced with disagreements?</label>
+                <select name="communication_style">
+                    <option value="i">Use respectful language.</option>
+                    <option value="ii">Employ hurtful or offensive language.</option>
+                    <option value="iii">Systematically belittle or mock others verbally.</option>
+                    <option value="iv">None of the above.</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>6. How often do you use offensive language to control others in your interactions?</label>
+                <input type="range" name="frequency_offensive_language" min="1" max="5">
+            </div>
+            
+            <div class="question">
+                <label>7. Share an example of a disagreement where you felt compelled to use offensive language. How did you navigate or resolve the situation?</label>
+                <select name="example_offensive_language">
+                    <option value="i">I addressed the issue calmly and respectfully.</option>
+                    <option value="ii">I used offensive language and later apologized for my actions.</option>
+                    <option value="iii">I have not encountered such a situation.</option>
+                    <option value="iv">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>8. Reflecting on your responses, which kind of perpetrator do you identify with the most?</label>
+                <select name="perpetrator_verbal">
+                    <option value="i">Verbal Abuser</option>
+                    <option value="ii">Observer</option>
+                    <option value="iii">Remorseful Perpetrator</option>
+                    <option value="iv">Non-Offender</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="prevSection(1)">Previous</button>
+            <button type="button" onclick="nextSection(3)">Next</button>
+        </div>
+
+        <!-- Section 3: Emotional Manipulation -->
+        <div class="form-section" id="section3">
+            <h2>Section 3: Emotional Manipulation</h2>
+            <div class="question">
+                <label>9. How do you influence relationships to gain control emotionally?</label>
+                <select name="emotional_influence">
+                    <option value="i">Through open communication and empathy.</option>
+                    <option value="ii">Through manipulation and deceit.</option>
+                    <option value="iii">By exploiting others for personal gain.</option>
+                    <option value="iv">None of the above.</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>10. How often do you use cunning tactics to control or exploit others emotionally in your social circles?</label>
+                <input type="range" name="frequency_emotional_manipulation" min="1" max="5">
+            </div>
+            
+            <div class="question">
+                <label>11. Describe a situation where you may have used emotional manipulation. How did it impact the relationship, and how did you address it?</label>
+                <select name="example_emotional_manipulation">
+                    <option value="i">I recognized it and apologized, working towards rebuilding trust.</option>
+                    <option value="ii">I acknowledged it but struggled to change my behavior.</option>
+                    <option value="iii">I haven't knowingly used emotional manipulation.</option>
+                    <option value="iv">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>12. Reflecting on your responses, which kind of perpetrator do you identify with the most?</label>
+                <select name="perpetrator_emotional">
+                    <option value="i">Emotional Manipulator</option>
+                    <option value="ii">Observer</option>
+                    <option value="iii">Remorseful Perpetrator</option>
+                    <option value="iv">Non-Offender</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="prevSection(2)">Previous</button>
+            <button type="button" onclick="nextSection(4)">Next</button>
+        </div>
+
+        <!-- Section 4: Financial Exploitation -->
+        <div class="form-section" id="section4">
+            <h2>Section 4: Financial Exploitation</h2>
+            <div class="question">
+                <label>13. How do you handle financial matters within relationships?</label>
+                <select name="financial_handling">
+                    <option value="i">Collaboratively and transparently.</option>
+                    <option value="ii">Engage in financial manipulation or control.</option>
+                    <option value="iii">Exploit others for personal financial gain.</option>
+                    <option value="iv">None of the above.</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>14. How often do you exploit or control others for personal benefit in financial dealings?</label>
+                <input type="range" name="frequency_financial_exploitation" min="1" max="5">
+            </div>
+            
+            <div class="question">
+                <label>15. Share an instance where you may have exploited others financially. How did you handle the aftermath?</label>
+                <select name="example_financial_exploitation">
+                    <option value="i">I recognized it, rectified the situation, and apologized.</option>
+                    <option value="ii">I acknowledged it but struggled to change my financial behavior.</option>
+                    <option value="iii">I haven't knowingly exploited others financially.</option>
+                    <option value="iv">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>16. Reflecting on your responses, which kind of perpetrator do you identify with the most?</label>
+                <select name="perpetrator_financial">
+                    <option value="i">Financial Exploiter</option>
+                    <option value="ii">Observer</option>
+                    <option value="iii">Remorseful Perpetrator</option>
+                    <option value="iv">Non-Offender</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="prevSection(3)">Previous</button>
+            <button type="button" onclick="nextSection(5)">Next</button>
+        </div>
+
+        <!-- Section 5: Religious Abuse -->
+        <div class="form-section" id="section5">
+            <h2>Section 5: Religious Abuse</h2>
+            <div class="question">
+                <label>17. How do you use religious beliefs to influence or control others?</label>
+                <select name="religious_influence">
+                    <option value="i">To guide and support positively.</option>
+                    <option value="ii">To manipulate or coerce.</option>
+                    <option value="iii">To impose my beliefs on others.</option>
+                    <option value="iv">None of the above.</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>18. How often do you use religious beliefs to influence or control others?</label>
+                <input type="range" name="frequency_religious_abuse" min="1" max="5">
+            </div>
+            
+            <div class="question">
+                <label>19. Describe a situation where you may have used religion to manipulate or control someone. How did you handle the situation?</label>
+                <select name="example_religious_abuse">
+                    <option value="i">I recognized it and made amends.</option>
+                    <option value="ii">I acknowledged it but struggled to change my behavior.</option>
+                    <option value="iii">I haven't used religion to manipulate or control others.</option>
+                    <option value="iv">Other (please specify).</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>20. Reflecting on your responses, which kind of perpetrator do you identify with the most?</label>
+                <select name="perpetrator_religious">
+                    <option value="i">Religious Abuser</option>
+                    <option value="ii">Observer</option>
+                    <option value="iii">Remorseful Perpetrator</option>
+                    <option value="iv">Non-Offender</option>
+                    <option value="v">Other (please specify).</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="prevSection(4)">Previous</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script src="perpScreening.js"></script>
+</body>
+</html>

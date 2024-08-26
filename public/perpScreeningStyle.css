@@ -1,0 +1,29 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.form-section {
+    display: none; /* Hide all sections by default */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form-section.active {
+    display: block; /* Show the active section */
+}
+
+.question {
+    margin-bottom: 20px; /* Space between questions */
+}
+
+label {
+    display: block; /* Make labels block-level */
+    margin-bottom: 10px; /* Space between label and input */
+}
+
+button {
+    margin-top: 10px;
+}
