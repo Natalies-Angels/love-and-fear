@@ -229,6 +229,10 @@ textarea {
         width: 120px;
         height: 120px;
     }
+    #button-4, #button-5
+    {
+        transform: translateX(-10px);
+    }
 }
 
 
