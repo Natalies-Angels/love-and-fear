@@ -204,9 +204,8 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 100px);
         gap: 20px;
-        max-width: 90%; /* Adjusted max-width to be more responsive */
+        max-width: 500px;
         margin: 20px auto;
-        padding: 0; /* Ensure no padding that could cause overflow */
     }
 }
 
@@ -216,8 +215,7 @@ textarea {
         grid-template-rows: repeat(8, 100px);
         gap: 10px;
         max-width: 90%; /* Make sure the width is responsive */
-        margin: 10px auto; /* Center the container */
-        padding: 0; /* Remove extra padding to prevent overflow */
+        margin: 20px auto; /* Center the container */
     }
 
     button {
@@ -230,5 +228,4 @@ textarea {
         height: 120px;
     }
 }
-
 
