@@ -225,7 +225,7 @@ textarea {
         height: 80px;
     }
 
-    #button-5, #button-7, #button-3 {
+    #button-5,  #button-3 {
         width: 150px;
         height: 150px;
         transform: translateY(40px);
