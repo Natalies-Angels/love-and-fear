@@ -199,7 +199,6 @@ textarea {
     padding: 5px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .question-buttons {
         grid-template-columns: repeat(2, 1fr);
@@ -208,24 +207,15 @@ textarea {
         max-width: 500px;
         margin: 20px auto;
     }
-
-    button {
-        width: 100px;
-        height: 100px;
-    }
-
-    #button-5, #button-7, #button-3 {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 @media (max-width: 576px) {
     .question-buttons {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 100px);
-        max-width: 300px;
         gap: 10px;
+        max-width: 100%; /* Make sure the width is responsive */
+        margin: 20px auto; /* Center the container */
     }
 
     button {
@@ -238,5 +228,4 @@ textarea {
         height: 120px;
     }
 }
-
 
