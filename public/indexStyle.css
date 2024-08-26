@@ -215,7 +215,7 @@ textarea {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 100px);
         gap: 10px;
-        max-width: 100%; /* Ensure the width is responsive */
+        max-width: 80%; /* Ensure the width is responsive */
         margin: 10px auto; /* Center the container */
         padding: 0 20px; /* Increase padding to prevent overflow */
     }
