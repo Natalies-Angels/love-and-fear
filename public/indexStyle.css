@@ -217,7 +217,7 @@ textarea {
         max-width: 90%; /* Make sure the width is responsive */
         margin: 40px auto; /* Center the container */
         translate: transform;
-        transform: translateY(-30px);
+        transform: translateX(-30px);
     }
 
     button {
