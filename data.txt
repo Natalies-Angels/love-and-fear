@@ -10,3 +10,11 @@ answer-1c: test23
 answer-1a: test1
 answer-1b: test2
 answer-1c: test23
+answer-1a: 
+answer-1b: 
+answer-1c: 
+answer-1: A
+answer-1e-text: 
+answer-2: C
+answer-2e-text: 
+answer-3e-text: test

@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="indexStyle.css">
     <title>love&fear questionnaire</title>
-
 </head>
-<body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="" alt="PA logo" width="20" height="20">
-          </a>
-        </div>
-      </nav>
+<body id="questionnaire-body">
 
-      <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link" href="perpScreening.html">Perp Screening</a>
         </li>
@@ -30,42 +22,459 @@
     </ul>
 
     <!-- QUESTIONNAIRE -->
+    <div class="tab-pane fade show active" id="questionnaire-tab">
+        <div class="question-buttons">
+            <button id="button-1" onclick="openQuestionPopup('popup-1', this)"></button>
+            <button id="button-2" onclick="openQuestionPopup('popup-2', this)"></button>
+            <button id="button-3" onclick="openQuestionPopup('popup-3', this)"></button>
+            <button id="button-4" onclick="openQuestionPopup('popup-4', this)"></button>
+            <button id="button-5" onclick="openQuestionPopup('popup-5', this)"></button>
+            <button id="button-6" onclick="openQuestionPopup('popup-6', this)"></button>
+            <button id="button-7" onclick="openQuestionPopup('popup-7', this)"></button>
+            <button id="button-8" onclick="openQuestionPopup('popup-8', this)"></button>
+        </div>
 
-    
-        <div class="tab-pane fade show active" id="questionnaire-tab">
-            <div class="question-buttons">
-                <button id="button-1" onclick="openQuestionPopup('popup-1', this)">1</button>
-                <button id="button-2" onclick="openQuestionPopup('popup-2', this)">2</button>
-                <button id="button-3" onclick="openQuestionPopup('popup-3', this)">3</button>
-                <button id="button-4" onclick="openQuestionPopup('popup-4', this)">4</button>
-                <button id="button-5" onclick="openQuestionPopup('popup-5', this)">5</button>
-                <button id="button-6" onclick="openQuestionPopup('popup-6', this)">6</button>
-                <button id="button-7" onclick="openQuestionPopup('popup-7', this)">7</button>
-                <button id="button-8" onclick="openQuestionPopup('popup-8', this)">8</button>
-            </div>
-        
-            <div class="popup" id="popup-1">
+        <!-- Popup for each question -->
+        <div class="popup" id="popup-1">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
                 <form action="/submit" method="post">
-                    <div id="question-1">
-                        <label for="answer-1a">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
-                        <input type="text" id="answer-1a" name="answer-1a">
-                        <label for="answer-1b">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
-                        <input type="text" id="answer-1b" name="answer-1b">
-                        <label for="answer-1c">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
-                        <input type="text" id="answer-1c" name="answer-1c">
-                        <input type="submit" value="done">
+                    <span class="close-btn" onclick="closePopup('popup-1')">&times;</span><br>
+                    <div id="1q1">
+                        <p>1. How do you define love in your relationships? (Pick a choice/choices that apply)</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-1a" name="answer-1" value="A">
+                            <label class="form-check-label" for="answer-1a">A) Love is about self-sacrifice and prioritizing my partner’s needs.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-1b" name="answer-1" value="B">
+                            <label class="form-check-label" for="answer-1b">B) Love is mutual respect and understanding.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-1c" name="answer-1" value="C">
+                            <label class="form-check-label" for="answer-1c">C) Love is a deep emotional connection and trust.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-1d" name="answer-1" value="D">
+                            <label class="form-check-label" for="answer-1d">D) Love is passion and intense emotions.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-1e" name="answer-1" value="E">
+                            <label class="form-check-label" for="answer-1e">E) Other:</label>
+                            <input type="text" id="answer-1e-text" name="answer-1e-text" placeholder="Specify other">
+                        </div>
+                    </div><br>
+            
+                    <div id="2q1">
+                        <p>2. Have you ever acted in a way you believed was loving, only to later realize it may have caused harm? (Pick a choice/choices that apply)</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2a" name="answer-2" value="A">
+                            <label class="form-check-label" for="answer-2a">A) Yes, I’ve tried to protect my partner but later realized it was controlling.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2b" name="answer-2" value="B">
+                            <label class="form-check-label" for="answer-2b">B) Yes, I’ve tried to push my partner to improve, but it came off as criticism.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2c" name="answer-2" value="C">
+                            <label class="form-check-label" for="answer-2c">C) No, I’ve always believed my actions were positive.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2d" name="answer-2" value="D">
+                            <label class="form-check-label" for="answer-2d">D) I’m not sure if my actions were harmful.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2e" name="answer-2" value="E">
+                            <label class="form-check-label" for="answer-2e">E) Other:</label>
+                            <input type="text" id="answer-2e-text" name="answer-2e-text" placeholder="Specify other">
+                        </div>
+                    </div><br>
+            
+                    <div id="3q1">
+                        <p>3. Do you believe your expressions of love have ever been misinterpreted or harmful? (Pick a choice/choices that apply)</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-3a" name="answer-3" value="A">
+                            <label class="form-check-label" for="answer-3a">A) Yes, my partner felt smothered by my affection.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-3b" name="answer-3" value="B">
+                            <label class="form-check-label" for="answer-3b">B) Yes, my partner felt neglected despite my love.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-3c" name="answer-3" value="C">
+                            <label class="form-check-label" for="answer-3c">C) No, my expressions of love have always been well-received.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-3d" name="answer-3" value="D">
+                            <label class="form-check-label" for="answer-3d">D) I’m not sure, it’s something I’m reflecting on now.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-3e" name="answer-3" value="E">
+                            <label class="form-check-label" for="answer-3e">E) Other:</label>
+                            <input type="text" id="answer-3e-text" name="answer-3e-text" placeholder="Specify other">
+                        </div>
                     </div>
+            
+                    <input type="submit" value="done" id="submit-button">
                 </form>
             </div>
-    
-    
+        </div>      
+        <div class="popup" id="popup-2">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-2')">&times;</span><br>
+                    <div id="1q2">
+                        <p>How does your community or group of friends show love to keep everyone safe? (Pick a choice/choices that apply)</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2a" name="answer-2" value="A">
+                            <label class="form-check-label" for="answer-2a">A) Regularly checking in to see how everyone is doing.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2b" name="answer-2" value="B">
+                            <label class="form-check-label" for="answer-2b">B) Creating environments where people feel comfortable sharing their feelings.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2c" name="answer-2" value="C">
+                            <label class="form-check-label" for="answer-2c">C) Sharing important information and resources with each other..</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2d" name="answer-2" value="D">
+                            <label class="form-check-label" for="answer-2d">D) Listening to each other with empathy and understanding..</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2e" name="answer-1" value="E">
+                            <label class="form-check-label" for="answer-2e">E) Other:</label>
+                            <input type="text" id="answer-2e-text" name="answer-1e-text" placeholder="Specify other">
+                        </div>
+                    </div><br>
 
+                    <div id="2q2">
+                        <p>What kind of safety rules would you make if they were all about love?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2a" name="answer-2" value="A">
+                            <label class="form-check-label" for="answer-2a">A) Ensuring everyone communicates respectfully and empathetically.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2b" name="answer-2" value="B">
+                            <label class="form-check-label" for="answer-2b">B) Making sure everyone can join in and have a say.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2c" name="answer-2" value="C">
+                            <label class="form-check-label" for="answer-2c">C) Regularly checking in on everyone’s emotional well-being.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2d" name="answer-2" value="D">
+                            <label class="form-check-label" for="answer-2d">D) Setting clear boundaries and respecting personal space.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="answer-2e" name="answer-2" value="E">
+                            <label class="form-check-label" for="answer-2e">E) Other:</label>
+                            <input type="text" id="answer-1e-text" name="answer-1e-text" placeholder="Specify other">
+                        </div>
+                    </div><br>
+                    <p>If you could change one thing to make everyone feel safe and loved, what would it be?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option1">
+                        <label class="form-check-label" for="option1">
+                            More open and frequent communication channels.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option2">
+                        <label class="form-check-label" for="option2">
+                            Better access to support services and groups.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option3">
+                        <label class="form-check-label" for="option3">
+                            Programs to teach empathy and understanding.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option4">
+                        <label class="form-check-label" for="option4">
+                            More social events to build community connections.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option5">
+                        <label class="form-check-label" for="option5">
+                            Other: <input type="text" class="form-control" placeholder="Please specify">
+                        </label>
+                    </div><br>
 
+                    <p>How does love from a romantic partner make you feel safe?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="option6">
+                            <label class="form-check-label" for="option6">
+                                Feeling stable and valued in the relationship.
+                            </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="option7">
+                    <label class="form-check-label" for="option7">
+                        Knowing you can rely on your partner.
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="option8">
+                    <label class="form-check-label" for="option8">
+                        Receiving support and encouragement from your partner.
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="option9">
+                    <label class="form-check-label" for="option9">
+                        Feeling safe to share your deepest feelings and fears.
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="option10">
+                    <label class="form-check-label" for="option10">
+                        Other: <input type="text" class="form-control" placeholder="Please specify">
+                    </label>
+                    </div>
+                </form>             
+            </div>              
+        </div>
+        <div class="popup" id="popup-3">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-3')">&times;</span><br>
+                    
+                    <div id="1q3">
+                        <p>Pick an Emoji/Emojis that apply</p>
+                        <p>1. How does fear manifest in your intimate relationships?</p>
+                        <label><input type="checkbox" name="answer-1" value="😨 Fear of losing my partner."> 😨 Fear of losing my partner.</label><br>
+                        <label><input type="checkbox" name="answer-1" value="😔 Fear of being vulnerable or getting hurt."> 😔 Fear of being vulnerable or getting hurt.</label><br>
+                        <label><input type="checkbox" name="answer-1" value="🔒 Fear of being controlled or manipulated."> 🔒 Fear of being controlled or manipulated.</label><br>
+                        <label><input type="checkbox" name="answer-1" value="😓 Fear of not being enough for my partner."> 😓 Fear of not being enough for my partner.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-1-other"></label>
+                    </div><br>
+                    
+                    <div id="2q3">
+                        <p>2. Have you ever engaged in harmful behavior out of fear?</p>
+                        <label><input type="checkbox" name="answer-2" value="😡 Yes, I’ve lashed out to avoid being hurt."> 😡 Yes, I’ve lashed out to avoid being hurt.</label><br>
+                        <label><input type="checkbox" name="answer-2" value="🛡️ Yes, I’ve become overly protective or controlling."> 🛡️ Yes, I’ve become overly protective or controlling.</label><br>
+                        <label><input type="checkbox" name="answer-2" value="🚫 No, I usually manage my fears constructively."> 🚫 No, I usually manage my fears constructively.</label><br>
+                        <label><input type="checkbox" name="answer-2" value="🤷‍♂️ I’m not sure, but I think it’s possible."> 🤷‍♂️ I’m not sure, but I think it’s possible.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-2-other"></label>
+                    </div><br>
+                    
+                    <div id="3q3">
+                        <p>3. Has fear ever driven you to act in ways that compromise your partner's safety or autonomy?</p>
+                        <label><input type="checkbox" name="answer-3" value="🔒 Yes, I’ve been overly controlling."> 🔒 Yes, I’ve been overly controlling.</label><br>
+                        <label><input type="checkbox" name="answer-3" value="😶‍🌫️ Yes, I’ve been emotionally distant or unavailable."> 😶‍🌫️ Yes, I’ve been emotionally distant or unavailable.</label><br>
+                        <label><input type="checkbox" name="answer-3" value="🚶‍♂️ No, I’m always mindful of my partner’s autonomy."> 🚶‍♂️ No, I’m always mindful of my partner’s autonomy.</label><br>
+                        <label><input type="checkbox" name="answer-3" value="🤔 I’m not sure, I need to reflect more on this."> 🤔 I’m not sure, I need to reflect more on this.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-3-other"></label>
+                    </div>
+                    
+                    <input type="submit" value="done" id="submit-button">
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup-4">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-4')">&times;</span><br>
+                    
+                    <div id="4q4">
+                        <p>4. How do you think fear changes the way people in your community act around each other?</p>
+                        <label><input type="checkbox" name="answer-4" value="🚶‍♂️ I notice that when people are afraid, they might avoid interacting with each other to stay safe."> 🚶‍♂️ I notice that when people are afraid, they might avoid interacting with each other to stay safe.</label><br>
+                        <label><input type="checkbox" name="answer-4" value="🤨 I see that fear can lead me to be more suspicious and less trusting of others."> 🤨 I see that fear can lead me to be more suspicious and less trusting of others.</label><br>
+                        <label><input type="checkbox" name="answer-4" value="🛑 I feel that fear makes me and others overly cautious, often leading to unnecessary precautions."> 🛑 I feel that fear makes me and others overly cautious, often leading to unnecessary precautions.</label><br>
+                        <label><input type="checkbox" name="answer-4" value="🤐 I’ve observed that fear can cause me to communicate less openly and honestly with others."> 🤐 I’ve observed that fear can cause me to communicate less openly and honestly with others.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-4-other"></label>
+                    </div><br>
+                    
+                    <div id="5q4">
+                        <p>5. How does fear make you feel about the safety of people you care about?</p>
+                        <label><input type="checkbox" name="answer-5" value="😟 Fear makes me feel more anxious about the well-being and safety of the people I care about."> 😟 Fear makes me feel more anxious about the well-being and safety of the people I care about.</label><br>
+                        <label><input type="checkbox" name="answer-5" value="🛡️ I feel a stronger need to protect and ensure the safety of my loved ones when I am afraid."> 🛡️ I feel a stronger need to protect and ensure the safety of my loved ones when I am afraid.</label><br>
+                        <label><input type="checkbox" name="answer-5" value="😞 Fear sometimes makes me feel powerless and unable to fully protect the people I care about."> 😞 Fear sometimes makes me feel powerless and unable to fully protect the people I care about.</label><br>
+                        <label><input type="checkbox" name="answer-5" value="🤨 It leads me to feel more distrustful of situations or people that might affect their safety."> 🤨 It leads me to feel more distrustful of situations or people that might affect their safety.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-5-other"></label>
+                    </div><br>
+                    
+                    <div id="6q4">
+                        <p>6. If you could make fear disappear to make everyone safe, how would you do it?</p>
+                        <label><input type="checkbox" name="answer-6" value="📚 I would focus on educating people to clear up misunderstandings and reduce fear."> 📚 I would focus on educating people to clear up misunderstandings and reduce fear.</label><br>
+                        <label><input type="checkbox" name="answer-6" value="💬 I’d encourage more open dialogue to help address and ease fears."> 💬 I’d encourage more open dialogue to help address and ease fears.</label><br>
+                        <label><input type="checkbox" name="answer-6" value="🤝 I’d build strong support networks to help everyone feel less alone and more secure."> 🤝 I’d build strong support networks to help everyone feel less alone and more secure.</label><br>
+                        <label><input type="checkbox" name="answer-6" value="🌟 I would promote and celebrate positive actions to create a more reassuring environment."> 🌟 I would promote and celebrate positive actions to create a more reassuring environment.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-6-other"></label>
+                    </div><br>
+                    
+                    <div id="7q4">
+                        <p>7. How can we help people feel less afraid and more cared for?</p>
+                        <label><input type="checkbox" name="answer-7" value="🤗 I would offer consistent reassurance and support to help alleviate people’s fears."> 🤗 I would offer consistent reassurance and support to help alleviate people’s fears.</label><br>
+                        <label><input type="checkbox" name="answer-7" value="🛡️ I’d work on creating safe spaces where people can freely share their concerns and feel valued."> 🛡️ I’d work on creating safe spaces where people can freely share their concerns and feel valued.</label><br>
+                        <label><input type="checkbox" name="answer-7" value="🤝 I’d focus on fostering strong, trusting relationships within the community."> 🤝 I’d focus on fostering strong, trusting relationships within the community.</label><br>
+                        <label><input type="checkbox" name="answer-7" value="🎉 I would encourage activities and experiences that build confidence and positivity."> 🎉 I would encourage activities and experiences that build confidence and positivity.</label><br>
+                        <label>🤔 Other: <input type="text" name="answer-7-other"></label>
+                    </div>
+                    
+                    <input type="submit" value="done" id="submit-button">
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup-5">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-5')">&times;</span><br>
+        
+                    <div id="4q5">
+                        <p>4. What makes you feel safe and loved where you live?</p>
+                        <label for="analogy-1">"Feeling safe and loved where you live is like</label>
+                        <input type="text" id="analogy-1" name="analogy-1" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-2">because</label>
+                        <input type="text" id="analogy-2" name="analogy-2" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-3">."</label>
+                    </div><br>
+                    
+                    <div id="5q5">
+                        <p>5. Do you feel more safe when people around you show love or when they show fear? Why?</p>
+                        <label for="analogy-4">"Feeling safer when people show love is like</label>
+                        <input type="text" id="analogy-4" name="analogy-4" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-5">because</label>
+                        <input type="text" id="analogy-5" name="analogy-5" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-6">."</label>
+                    </div><br>
+        
+                    <div id="6q5">
+                        <p>6. What makes you feel safe when you are with your friends?</p>
+                        <label for="analogy-7">"Feeling safe with friends is like</label>
+                        <input type="text" id="analogy-7" name="analogy-7" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-8">because</label>
+                        <input type="text" id="analogy-8" name="analogy-8" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-9">."</label>
+                    </div><br>
+                    
+                    <div id="7q5">
+                        <p>7. Was there a time when fear made you act in a way to keep yourself safe? What happened?</p>
+                        <label for="analogy-10">"Acting to keep yourself safe due to fear is like</label>
+                        <input type="text" id="analogy-10" name="analogy-10" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-11">because</label>
+                        <input type="text" id="analogy-11" name="analogy-11" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-12">."</label>
+                    </div><br>
+        
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+        </div>
+        
+        <div class="popup" id="popup-6">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-6')">&times;</span><br>
+                    
+                    <div id="1q6">
+                        <p>1. How do you define safety in your relationships?</p>
+                        <label for="analogy-1">"Safety in relationships is like</label>
+                        <input type="text" id="analogy-1" name="analogy-1" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-2">because</label>
+                        <input type="text" id="analogy-2" name="analogy-2" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-3">."</label>
+                    </div><br>
+                    
+                    <div id="2q6">
+                        <p>2. Have there been instances where you felt unsafe in a relationship? How did you react?</p>
+                        <label for="analogy-4">"Feeling unsafe in a relationship is like</label>
+                        <input type="text" id="analogy-4" name="analogy-4" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-5">because</label>
+                        <input type="text" id="analogy-5" name="analogy-5" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-6">."</label>
+                    </div><br>
+                    
+                    <div id="2q6">
+                        <p>3. Have you ever imposed actions or behaviors in the name of safety that may have been restrictive or controlling?</p>                     </p>
+                        <label for="analogy-6">"Imposing actions for safety that may be restrictive or controlling is like</label>
+                        <input type="text" id="analogy-6" name="analogy-6" placeholder="Enter your analogy here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-7">because</label>
+                        <input type="text" id="analogy-7" name="analogy-7" placeholder="Enter your reason here" style="width: 200px; display: inline-block; border-bottom: 2px solid #000;">
+                        <label for="analogy-6">."</label>
+                    </div><br>
+                    
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup-7">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-7')">&times;</span><br>
+        
+                    <p>1. How important is security in your relationships? How do you ensure it?</p>
+                    <label><input type="checkbox" name="security-importance" value="A"> A) It’s the most important thing; I set clear boundaries.</label><br>
+                    <label><input type="checkbox" name="security-importance" value="B"> B) It’s important, but I focus on emotional security.</label><br>
+                    <label><input type="checkbox" name="security-importance" value="C"> C) It’s important, but I prioritize freedom and trust.</label><br>
+                    <label><input type="checkbox" name="security-importance" value="D"> D) I’m not sure how to ensure security.</label><br>
+                    <label><input type="checkbox" name="security-importance" value="E"> E) Other: <input type="text" name="security-other" placeholder="Enter your answer"></label><br><br>
+        
+                    <p>2. Have you ever felt that your actions to secure your relationship were overbearing or harmful?</p>
+                    <label><input type="checkbox" name="actions-overbearing" value="A"> A) Yes, I’ve been too controlling in the name of security.</label><br>
+                    <label><input type="checkbox" name="actions-overbearing" value="B"> B) Yes, I’ve been overly cautious or protective.</label><br>
+                    <label><input type="checkbox" name="actions-overbearing" value="C"> C) No, I balance security with trust and freedom.</label><br>
+                    <label><input type="checkbox" name="actions-overbearing" value="D"> D) I’m not sure, I’m reflecting on this now.</label><br>
+                    <label><input type="checkbox" name="actions-overbearing" value="E"> E) Other: <input type="text" name="actions-other" placeholder="Enter your answer"></label><br><br>
+        
+                    <p>3. What could be done to make people feel more loved and less scared in your neighborhood?</p>
+                    <label><input type="checkbox" name="neighborhood-improvements" value="A"> Organize regular community events to strengthen relationships and build a sense of belonging.</label><br>
+                    <label><input type="checkbox" name="neighborhood-improvements" value="B"> Create forums or meetings where neighbors can discuss concerns and offer support to each other.</label><br>
+                    <label><input type="checkbox" name="neighborhood-improvements" value="C"> Increase visible acts of kindness, such as neighborhood help programs or volunteer activities, to show that people care.</label><br>
+                    <label><input type="checkbox" name="neighborhood-improvements" value="D"> Improve safety measures like better street lighting or neighborhood watch programs to reduce fear and increase feelings of security.</label><br>
+                    <label><input type="checkbox" name="neighborhood-improvements" value="E"> Other: <input type="text" name="neighborhood-other" placeholder="Enter your answer"></label><br><br>
+        
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup-8">
+            <div class="popup-content">
+                <img src="loveGhost.png" alt="" id="love-ghost">
+                <img src="fearGhost.png" alt="" id="fear-ghost">
+                <form action="/submit" method="post">
+                    <span class="close-btn" onclick="closePopup('popup-8')">&times;</span><br>
+        
+                    <p>4. Can you share a short story where someone’s love made you feel protected?</p>
+                    <label><input type="checkbox" name="love-protection" value="A"> When I was feeling down, a friend spent hours listening and offering comfort, which made me feel safe and protected from my worries.</label><br>
+                    <label><input type="checkbox" name="love-protection" value="B"> During a stressful time, my family rallied around me, providing emotional support and reassurance that made me feel secure and loved.</label><br>
+                    <label><input type="checkbox" name="love-protection" value="C"> My partner once stayed up with me during a particularly anxious night, their presence and words made me feel safe and cared for.</label><br>
+                    <label><input type="checkbox" name="love-protection" value="D"> A neighbor noticed I was struggling with a task and offered to help, their kindness made me feel valued and protected in my own community.</label><br>
+                    <label><input type="checkbox" name="love-protection" value="E"> Other: <input type="text" name="love-protection-other" placeholder="Enter your answer"></label><br><br>
+        
+                    <p>5. Imagine a place where everyone feels safe because they are loved. What would that place look like?</p>
+                    <label><input type="checkbox" name="safe-place" value="A"> It would be a place filled with warmth and welcoming gestures, where everyone feels they belong and are valued.</label><br>
+                    <label><input type="checkbox" name="safe-place" value="B"> People would openly communicate with kindness and empathy, creating an environment where everyone feels heard and understood.</label><br>
+                    <label><input type="checkbox" name="safe-place" value="C"> The place would have systems in place to support individuals in need, with community programs and resources readily available.</label><br>
+                    <label><input type="checkbox" name="safe-place" value="D"> Everyone would interact with respect and care, creating a safe space where personal boundaries are honored and mutual support is prevalent.</label><br>
+                    <label><input type="checkbox" name="safe-place" value="E"> Other: <input type="text" name="safe-place-other" placeholder="Enter your answer"></label><br><br>
+        
+                    <input type="submit" value="Submit" id="submit-button">
+                </form>
+            </div>
+        </div>
+        
+        
+        
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>
-
-
-
-

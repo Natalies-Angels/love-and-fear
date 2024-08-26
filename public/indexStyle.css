@@ -1,17 +1,100 @@
-.popup
-{
-    display: none;
-    position: absolute;
-    z-index: 10;
-    background-color: #fefefe;
-    padding: 10px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    /* width: 200px; Width of the popup */
+#questionnaire-body {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #f16a48, #f5d6be); 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
+.popup {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    overflow-y: auto
+}
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 80px;
+    border: 1px solid #888;
+    width: 100%; /* Adjust the size as necessary */
+    max-width: 900px;
+    border-radius: 10px;
+    position: relative;
+   
+}
+#love-ghost {
+    width: 90px; /* Adjust the size */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 10px; /* Position at the top */
+    right: 10px; /* Position at the right */
+}
+#fear-ghost {
+    width: 120px; /* Adjust the size */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    bottom:  5px; /* Position at the top */
+    left: 5px; /* Position at the right */
+}
+#submit-button {
+    float: right; /* Or use one of the other methods above */
+    margin-top: 10px; /* Optional: adds some space above the button */
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Adjust this value to move the button down or up */
+    left: 10px; /* Adjust this value to move the button left or right */
+    margin: 0; /* Remove any default margin */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bingo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bingo-table th, .bingo-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.bingo-table th {
+    background-color: #f2f2f2;
+}
+
+/* .bingo-cell {
+    vertical-align: top;
+} */
+
+.bingo-cell label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bingo-cell input {
+    /* width: 100%; */
+    margin-top:  auto;
+}
+
+
 .question-buttons {
-    /* padding: 160px; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 120px);
@@ -19,48 +102,141 @@
     justify-items: center;
     align-items: center;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 25px auto;
 }
-
-#button-1 { grid-column: 2; }
-#button-2 { grid-column: 1; grid-row: 2; }
-#button-3 { grid-column: 2; grid-row: 2; }
-#button-4 { grid-column: 3; grid-row: 2; }
-#button-5 { grid-column: 2; grid-row: 3; }
-#button-6 { grid-column: 1; grid-row: 4; }
-#button-7 { grid-column: 2; grid-row: 4; }
-#button-8 { grid-column: 3; grid-row: 4; }
 
 button {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
+    background: none;
     border: none;
+    padding: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    outline: none;
 }
 
-        .bingo-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .bingo-table th, .bingo-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        .bingo-table th {
-            background-color: #f2f2f2;
-        }
-        .bingo-cell {
-            vertical-align: top;
-        }
+/* Button sizes */
+#button-1 {
+    background-image: url('numberOne.png');
+    width: 75px;
+    height: 75px;
+    grid-column: 2;
+    transform: translateY(-10px);
+}
 
-/* #button-1 { background-image: url('images/ball1.png'); }
-#button-2 { background-image: url('images/ball2.png'); }
-#button-3 { background-image: url('images/ball3.png'); }
-#button-4 { background-image: url('images/ball4.png'); }
-#button-5 { background-image: url('images/ball5.png'); }
-#button-6 { background-image: url('images/ball6.png'); }
-#button-7 { background-image: url('images/ball7.png'); }
-#button-8 { background-image: url('images/ball8.png'); } */
+#button-2 {
+    background-image: url('numberTwo.png');
+    width: 90px;
+    height: 90px;
+    grid-column: 1;
+    grid-row: 2;
+    transform: translateY(-10px);
+}
+
+#button-5 {
+    background-image: url('numberFive.png');
+    width: 200px;
+    height: 200px; 
+    grid-column: 3;
+    grid-row: 4;
+    transform: translateY(-40px);
+}
+
+#button-4 {
+    background-image: url('numberFour.png');
+    width: 140px;
+    height: 140px;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#button-8 {
+    background-image: url('numberEight.png');
+    width: 160px;
+    height: 160px;
+    grid-column: 2;
+    grid-row: 3;
+    transform: translateY(-55px);
+}
+
+#button-6 {
+    background-image: url('numberSix.png');
+    width: 95px;
+    height: 95px;
+    grid-column: 2;
+    grid-row: 2;
+    transform: translate(-40px, -50px);
+}
+
+#button-7 {
+    background-image: url('numberSeven.png');
+    width: 205px;
+    height: 245px;
+    grid-column: 1;
+    grid-row: 4;
+    transform: translateY(-70px);
+}
+
+#button-3 {
+    background-image: url('numberThree.png');
+    width: 180px;
+    height: 180px;
+    grid-column: 2;
+    grid-row: 4;
+    transform: translateY(-20px);
+}
+input[type="text"], textarea {
+    border: none;
+    border-bottom: 2px solid #000;
+    padding: 5px;
+    outline: none;
+}
+
+textarea {
+    border-bottom: none;
+    border: 2px solid #000;
+    padding: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .question-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        gap: 20px;
+        max-width: 500px;
+        margin: 20px auto;
+    }
+
+    button {
+        width: 100px;
+        height: 100px;
+    }
+
+    #button-5, #button-7, #button-3 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .question-buttons {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 100px);
+        max-width: 300px;
+        gap: 10px;
+    }
+
+    button {
+        width: 80px;
+        height: 80px;
+    }
+
+    #button-5, #button-7, #button-3 {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
