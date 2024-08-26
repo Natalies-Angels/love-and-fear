@@ -224,7 +224,11 @@ textarea {
         width: 80px;
         height: 80px;
     }
-
+    #button-7
+    {
+        width: 200px;
+        height: 200px;
+    }
     #button-5,  #button-3 {
         width: 150px;
         height: 150px;
