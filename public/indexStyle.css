@@ -64,36 +64,6 @@
     cursor: pointer;
 }
 
-.bingo-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.bingo-table th, .bingo-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.bingo-table th {
-    background-color: #f2f2f2;
-}
-
-/* .bingo-cell {
-    vertical-align: top;
-} */
-
-.bingo-cell label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.bingo-cell input {
-    /* width: 100%; */
-    margin-top:  auto;
-}
-
-
 .question-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -186,4 +156,61 @@ button {
     grid-column: 2;
     grid-row: 4;
     transform: translateY(-20px);
+}
+
+/* NETWORKING BINGO */
+/* General Styles for the Bingo Grid */
+.bingo-content {
+    padding: 1rem;
+    margin: auto;
+    max-width: 100%;
+}
+
+.bingo-grid {
+    display: grid;
+    gap: 0.5rem; /* Space between cells */
+    grid-template-columns: repeat(5, 1fr); /* Default 5 columns */
+    width: 100%;
+}
+
+.bingo-cell {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9; /* Optional: background color for better readability */
+}
+
+.bingo-cell label {
+    display: block;
+    font-weight: bold;
+}
+
+.bingo-cell input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .bingo-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .bingo-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .bingo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .bingo-grid {
+        grid-template-columns: 1fr; /* Single column for the smallest screens */
+    }
 }
