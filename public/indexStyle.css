@@ -266,19 +266,19 @@ button {
     }
 
     #button-5 {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         transform: translateY(-20px);
     }
 
     #button-4 {
-        width: 80px;
-        height: 80px;
+        width: 55px;
+        height: 55px;
     }
 
     #button-8 {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         transform: translateY(-30px);
     }
 
@@ -289,14 +289,14 @@ button {
     }
 
     #button-7 {
-        width: 120px;
-        height: 120px;
-        transform: translateY(-30px);
+        width: 130px;
+        height: 130px;
+        transform: translateY(-40px);
     }
 
     #button-3 {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
         transform: translateY(-10px);
     }
 }
