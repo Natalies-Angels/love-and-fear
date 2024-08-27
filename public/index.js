@@ -40,3 +40,38 @@ window.onclick = function(event) {
     }
 }
 
+// Function to validate if all required fields are filled
+function validateForm(popupId) {
+    const popup = document.getElementById(popupId);
+    const checkboxes = popup.querySelectorAll('input[type="checkbox"]');
+    const otherInputs = popup.querySelectorAll('input[type="text"]');
+    let isValid = true;
+
+    // Check if at least one checkbox is selected
+    const isCheckboxChecked = Array.from(checkboxes).some(cb => cb.checked);
+    
+    // Check if any "Other" inputs are filled
+    const isOtherInputFilled = Array.from(otherInputs).some(input => input.value.trim() !== "");
+
+    if (!isCheckboxChecked && !isOtherInputFilled) {
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+// Function to handle form submission
+function handleSubmit(popupId, event) {
+    if (!validateForm(popupId)) {
+        event.preventDefault(); // Prevent form submission
+        alert("Please fill out all required fields before submitting.");
+    }
+}
+
+// Attach event listeners to forms
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(event) {
+        const popupId = this.closest('.popup').id;
+        handleSubmit(popupId, event);
+    });
+});
