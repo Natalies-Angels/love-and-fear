@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling if not needed */
+    height: auto; /* Allow height to adjust based on content */
 }
 .nav-link
 {
