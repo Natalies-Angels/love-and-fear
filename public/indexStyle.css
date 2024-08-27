@@ -1,32 +1,23 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling if not needed */
+}
+.nav-link
+{
+    color: black;
+}
 #questionnaire-body {
     margin: 0;
     height: 100%;
-    background: linear-gradient(to bottom, #f16a48, #f5d6be); 
+    background: linear-gradient(to bottom, #f1563b, #f5d6be);
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
+    position: relative; /* Allow absolute positioning of floating ghosts */
 }
-.popup {
-    position: fixed;
-    z-index: 9;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
-    display: none; /* Hidden by default */
-    overflow-y: auto
-}
-.popup-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 80px;
-    border: 1px solid #888;
-    width: 100%; /* Adjust the size as necessary */
-    max-width: 900px;
-    border-radius: 10px;
-    position: relative;
-   
-}
+
 #love-ghost {
     width: 90px; /* Adjust the size */
     height: auto; /* Maintain aspect ratio */
@@ -41,6 +32,73 @@
     bottom:  5px; /* Position at the top */
     left: 5px; /* Position at the right */
 }
+/* Floating Ghosts */
+/* Ensure the ghosts are positioned and have a higher z-index */
+.ghost {
+    position: absolute;
+    z-index: 10; /* Ensure this is higher than other content */
+}
+
+.ghost-top-left {
+    top: 90px;
+    left: 100px;
+    width: 220px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+}
+
+.ghost-top-right {
+    top: 200px;
+    right: 200px;
+    width: 200px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+}
+.ghost-top-right-2 {
+    top: 100px;
+    right: 100px;
+    width: 150px; /* Adjust size as needed */
+    height: 190px; /* Adjust size as needed */
+}
+
+.ghost-bottom-left {
+    bottom: 10px;
+    left: 220px;
+    width: 200px; /* Adjust size as needed */
+    height: 260px; /* Adjust size as needed */
+}
+
+.ghost-bottom-right {
+    bottom: 10px;
+    right: 10px;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+}
+
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 80px;
+    border: 1px solid #888;
+    width: 100%; /* Adjust the size as necessary */
+    max-width: 900px;
+    border-radius: 10px;
+    position: relative;
+}
+
 #submit-button {
     float: right; /* Or use one of the other methods above */
     margin-top: 10px; /* Optional: adds some space above the button */
@@ -64,6 +122,7 @@
     cursor: pointer;
 }
 
+/* Question Buttons Grid */
 .question-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -120,12 +179,13 @@ button {
     height: 140px;
     grid-column: 3;
     grid-row: 2;
+    transform: translateY(-30px);
 }
 
 #button-8 {
     background-image: url('numberEight.png');
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
     grid-column: 2;
     grid-row: 3;
     transform: translateY(-55px);
@@ -143,10 +203,10 @@ button {
 #button-7 {
     background-image: url('numberSeven.png');
     width: 205px;
-    height: 245px;
+    height: 205px;
     grid-column: 1;
     grid-row: 4;
-    transform: translateY(-70px);
+    transform: translateY(-100px);
 }
 
 #button-3 {
@@ -157,6 +217,7 @@ button {
     grid-row: 4;
     transform: translateY(-20px);
 }
+
 @media (max-width: 768px) {
     .question-buttons {
         grid-template-columns: repeat(2, 1fr);
@@ -202,43 +263,74 @@ button {
     }
 
     #button-7 {
-        width: 150px;
-        height: 150px;
-        transform: translateY(-50px);
+        width: 120px;
+        height: 120px;
+        transform: translateY(-80px);
     }
 
     #button-3 {
         width: 120px;
         height: 120px;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
+    .ghost-top-left {
+        top: 100px;
+        left: 40px;
+        width: 88px; /* Adjust size as needed */
+        height: 60px; /* Adjust size as needed */
+    }
+    
+    .ghost-top-right {
+        top: 180px;
+        right: 20px;
+        width: 90px; /* Adjust size as needed */
+        height: 200px; /* Adjust size as needed */
+    }
+    .ghost-top-right-2 {
+        top: 60px;
+        right: 20px;
+        width: 70px; /* Adjust size as needed */
+        height: 90px; /* Adjust size as needed */
+    }
+    
+    .ghost-bottom-left {
+        bottom: 430px;
+        left: 80px;
+        width: 120px; /* Adjust size as needed */
+        height: 150px; /* Adjust size as needed */
+    }
+    
+    .ghost-bottom-right {
+        bottom: 10px;
+        right: 10px;
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+    }
+    
 }
 
 @media (max-width: 576px) {
     .question-buttons {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 100px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 80px);
         gap: 15px;
-        max-width: 90%;
-        margin: 10px auto;
+        max-width: 400px;
+        margin: 15px auto;
     }
 
     #button-1 {
         width: 50px;
         height: 50px;
-        transform: translateY(-10px);
     }
 
     #button-2 {
         width: 60px;
         height: 60px;
-        transform: translateY(-10px);
     }
 
     #button-5 {
         width: 120px;
         height: 120px;
-        transform: translateY(-20px);
     }
 
     #button-4 {
@@ -249,35 +341,38 @@ button {
     #button-8 {
         width: 100px;
         height: 100px;
-        transform: translateY(-30px);
     }
 
     #button-6 {
         width: 60px;
         height: 60px;
-        transform: translate(-20px, -30px);
     }
 
     #button-7 {
-        width: 120px;
-        height: 120px;
-        transform: translateY(-30px);
+        width: 100px;
+        height: 100px;
     }
 
     #button-3 {
         width: 100px;
         height: 100px;
-        transform: translateY(-10px);
     }
 }
-
 /* NETWORKING BINGO */
 /* General Styles for the Bingo Grid */
+.networkingBingo-body
+{
+    background: linear-gradient(to bottom, #f1563b94, #f5d6be);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+}
 .bingo-content {
-    padding: 1rem;
+    padding: 6rem;
     margin: auto;
     max-width: 100%;
 }
+
 
 .bingo-grid {
     display: grid;
@@ -286,22 +381,43 @@ button {
     width: 100%;
 }
 
+
 .bingo-cell {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     padding: 0.5rem;
     border: 1px solid #ddd;
-    background-color: #f9f9f9; /* Optional: background color for better readability */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: background color for better readability */
+    min-height: 150px; /* Ensure a minimum height for cells */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
 
 .bingo-cell label {
     display: block;
     font-weight: bold;
 }
 
+
 .bingo-cell input[type="text"] {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); /* Adjust width considering padding */
     padding: 0.5rem;
     margin-top: 0.5rem;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    height: 2rem; /* Set a consistent height for inputs */
+    line-height: 2rem; /* Vertically center text */
 }
+.ghost-top-right-bingo {
+    position: fixed; /* Fixes the element in place relative to the viewport */
+    top: 45px; /* Distance from the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the element's width to truly center it */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+}
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
@@ -310,17 +426,28 @@ button {
     }
 }
 
+
 @media (max-width: 768px) {
     .bingo-grid {
         grid-template-columns: repeat(3, 1fr); /* Three columns for smaller screens */
     }
 }
 
+
 @media (max-width: 576px) {
     .bingo-grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
     }
+    .ghost-top-right-bingo {
+        position: fixed; /* Fixes the element in place relative to the viewport */
+        top: 125px; /* Distance from the top of the viewport */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for the element's width to truly center it */
+        width: 60px; /* Adjust size as needed */
+        height: 60px; /* Adjust size as needed */
+    }
 }
+
 
 @media (max-width: 400px) {
     .bingo-grid {
