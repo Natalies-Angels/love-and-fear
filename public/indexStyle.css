@@ -357,6 +357,40 @@ button {
         width: 100px;
         height: 100px;
     }
+    .ghost-top-left {
+        top: 100px;
+        left: 40px;
+        width: 98px; /* Adjust size as needed */
+        height: 81px; /* Adjust size as needed */
+    }
+    
+    .ghost-top-right {
+        top: 180px;
+        right: 20px;
+        width: 70px; /* Adjust size as needed */
+        height: 130px; /* Adjust size as needed */
+    }
+    .ghost-top-right-2 {
+        top: 110px;
+        right: 80px;
+        width: 50px; /* Adjust size as needed */
+        height: 70px; /* Adjust size as needed */
+    }
+    
+    .ghost-bottom-left {
+        bottom: 180px;
+        left: 80px;
+        width: 100px; /* Adjust size as needed */
+        height: 150px; /* Adjust size as needed */
+    }
+    
+    .ghost-bottom-right {
+        bottom: 10px;
+        right: 10px;
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+    }
+
 }
 /* NETWORKING BINGO */
 /* General Styles for the Bingo Grid */
