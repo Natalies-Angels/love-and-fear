@@ -1,9 +1,10 @@
 /* General Styles */
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling if not needed */
+    overflow: auto; /* Prevent scrolling if not needed */
 }
 .nav-link
 {
@@ -251,8 +252,8 @@ button {
     }
 
     #button-4 {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     #button-8 {
@@ -315,6 +316,7 @@ button {
 }
 
 @media (max-width: 576px) {
+   
     .question-buttons {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 80px);
@@ -406,21 +408,21 @@ button {
         height: 150px; /* Adjust size as needed */
     }
 }
+
 /* NETWORKING BINGO */
 /* General Styles for the Bingo Grid */
-.networkingBingo-body
-{
+.networkingBingo-body {
     background: linear-gradient(to bottom, #f1563b94, #f5d6be);
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: scroll;
 }
+
 .bingo-content {
     padding: 6rem;
     margin: auto;
     max-width: 100%;
 }
-
 
 .bingo-grid {
     display: grid;
@@ -428,7 +430,6 @@ button {
     grid-template-columns: repeat(5, 1fr); /* Default 5 columns */
     width: 100%;
 }
-
 
 .bingo-cell {
     display: flex; /* Flexbox for alignment */
@@ -442,12 +443,10 @@ button {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-
 .bingo-cell label {
     display: block;
     font-weight: bold;
 }
-
 
 .bingo-cell input[type="text"] {
     width: calc(100% - 20px); /* Adjust width considering padding */
@@ -457,6 +456,7 @@ button {
     height: 2rem; /* Set a consistent height for inputs */
     line-height: 2rem; /* Vertically center text */
 }
+
 .ghost-top-right-bingo {
     position: fixed; /* Fixes the element in place relative to the viewport */
     top: 45px; /* Distance from the top of the viewport */
@@ -466,7 +466,6 @@ button {
     height: 100px; /* Adjust size as needed */
 }
 
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .bingo-grid {
@@ -474,31 +473,35 @@ button {
     }
 }
 
-
 @media (max-width: 768px) {
     .bingo-grid {
         grid-template-columns: repeat(3, 1fr); /* Three columns for smaller screens */
     }
 }
 
-
 @media (max-width: 576px) {
     .bingo-grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
+        gap: 1rem; /* Increase gap between cells */
+    }
+    .bingo-cell {
+        min-height: 200px; /* Increase height for better visibility */
+        padding: 1rem; /* Increase padding for larger cells */
     }
     .ghost-top-right-bingo {
-        position: fixed; /* Fixes the element in place relative to the viewport */
         top: 125px; /* Distance from the top of the viewport */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Adjust for the element's width to truly center it */
         width: 60px; /* Adjust size as needed */
         height: 60px; /* Adjust size as needed */
     }
 }
 
-
 @media (max-width: 400px) {
     .bingo-grid {
         grid-template-columns: 1fr; /* Single column for the smallest screens */
+        gap: 1rem; /* Increase gap between cells */
+    }
+    .bingo-cell {
+        min-height: 250px; /* Further increase height for better visibility */
+        padding: 1rem; /* Increase padding for larger cells */
     }
 }
