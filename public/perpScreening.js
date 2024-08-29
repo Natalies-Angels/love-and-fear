@@ -1,28 +1,31 @@
-// scripts.js
-let currentSection = 1;
+document.addEventListener('DOMContentLoaded', function () {
+    let currentSection = 0;
+    const sections = document.querySelectorAll('.form-section');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-function showSection(section) {
-    document.querySelectorAll('.form-section').forEach((sec) => {
-        sec.classList.remove('active');
-    });
-    document.getElementById('section' + section).classList.add('active');
-}
+    function showSection(index) {
+        sections.forEach((section, i) => {
+            section.classList.toggle('active', i === index);
+        });
 
-function nextSection(section) {
-    if (section > 5) {
-        // Handle form submission
-        document.getElementById('assessment-form').submit();
-    } else {
-        showSection(section);
-        currentSection = section;
+        prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
+        nextBtn.style.display = index === sections.length - 1 ? 'none' : 'inline-block';
     }
-}
 
-function prevSection(section) {
-    if (section < 1) return;
-    showSection(section);
-    currentSection = section;
-}
+    prevBtn.addEventListener('click', function () {
+        if (currentSection > 0) {
+            currentSection--;
+            showSection(currentSection);
+        }
+    });
 
-// Initialize the form by showing the first section
-showSection(currentSection);
+    nextBtn.addEventListener('click', function () {
+        if (currentSection < sections.length - 1) {
+            currentSection++;
+            showSection(currentSection);
+        }
+    });
+
+    showSection(currentSection);
+});

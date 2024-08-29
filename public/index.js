@@ -75,3 +75,67 @@ document.querySelectorAll('form').forEach(form => {
         handleSubmit(popupId, event);
     });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Target the Networking Bingo link
+    const bingoLink = document.querySelector('a[href="networkingBingo.html"]');
+    const modal = document.getElementById('codeModal');
+    const closeModal = document.querySelector('.close-modal');
+    const submitCodeButton = document.getElementById('submitCode');
+    const errorMessage = document.getElementById('error-message');
+    
+    // Example correct code
+    const correctCode = "1234"; // Change this to your desired access code
+    
+    // Show modal on Networking Bingo link click
+    bingoLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the link from navigating
+        modal.style.display = 'block'; // Show the modal
+    });
+    
+    // Close modal when the user clicks on the 'X'
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    // Handle code submission
+    submitCodeButton.addEventListener('click', function() {
+        const enteredCode = document.getElementById('accessCode').value;
+        
+        if (enteredCode === correctCode) {
+            window.location.href = bingoLink.href; // Navigate to the Networking Bingo page
+        } else {
+            errorMessage.style.display = 'block'; // Show error message
+        }
+    });
+    
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const responses = document.querySelectorAll('.bingo-cell input[type="text"]');
+    const popup = new bootstrap.Modal(document.getElementById('popup'));
+
+    responses.forEach(response => {
+        response.addEventListener('input', () => {
+            const filledResponses = document.querySelectorAll('.bingo-cell input[type="text"]').length;
+            const nonEmptyResponses = Array.from(responses).filter(input => input.value.trim() !== '').length;
+
+            if (nonEmptyResponses >= 7) {
+                popup.show();
+            }
+        });
+    });
+});

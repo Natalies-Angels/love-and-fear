@@ -1,29 +1,94 @@
-/* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Crimson Pro', serif;
+   
 }
 
-.form-section {
-    display: none; /* Hide all sections by default */
+.container {
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    border: 1px solid #ccc;
+}
+
+#main-title {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Crimson Pro', serif;
+    color: #f1563b;
+    
+    
+}
+.nav-link
+{
+    color: black;
+}
+
+#perp-submit
+{
+    background-color: black;
+    color: white;
+}
+#perp-body
+{
+    background-color: #f1563b13;
+}
+.form-section {
+    display: none;
+    padding: 40px;
+    border: 1px solid #f1563b6b;
+    background-color: #f1563b07;
     border-radius: 5px;
     margin-bottom: 20px;
+    font-family: 'Crimson Pro', serif;
+    
 }
-
+.form-section h2{
+    text-align: center;
+    font-weight: bolder;
+}
 .form-section.active {
-    display: block; /* Show the active section */
+    display: block;
 }
 
-.question {
-    margin-bottom: 20px; /* Space between questions */
+.form-navigation {
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'Crimson Pro', serif;
 }
 
-label {
-    display: block; /* Make labels block-level */
-    margin-bottom: 10px; /* Space between label and input */
+.btn {
+    margin: 0 10px;
+    
+}
+#prevBtn
+{
+    color: #f1563b;
+    background-color: white;
+    width: 10%;
+    font-size: larger;
+}
+#nextBtn
+{
+    background-color: #f1563b;
+    color: white;
+    width: 10%;
+    font-size: larger;
+}
+.form-submit {
+    text-align: center;
+    margin-top: 20px;
 }
 
-button {
-    margin-top: 10px;
+legend {
+    font-weight: bold;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-left: 40px;
+    margin-right: 10px;
+}
+fieldset {
+    font-size: larger;
+}
+h4{
+    margin-bottom: 50px;
 }

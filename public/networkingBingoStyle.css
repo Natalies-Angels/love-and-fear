@@ -1,0 +1,111 @@
+/* NETWORKING BINGO */
+/* General Styles for the Bingo Grid */
+.networkingBingo-body
+{
+    background: linear-gradient(to bottom, #f1563b94, #f5d6be);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+}
+.bingo-content {
+    padding: 6rem;
+    margin: auto;
+    max-width: 100%;
+}
+
+
+.bingo-grid {
+    display: grid;
+    gap: 0.5rem; /* Space between cells */
+    grid-template-columns: repeat(5, 1fr); /* Default 5 columns */
+    width: 100%;
+}
+
+
+.bingo-cell {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: background color for better readability */
+    min-height: 150px; /* Ensure a minimum height for cells */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.bingo-cell label {
+    display: block;
+    font-weight: bold;
+}
+
+
+.bingo-cell input[type="text"] {
+    width: calc(100% - 20px); /* Adjust width considering padding */
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    height: 2rem; /* Set a consistent height for inputs */
+    line-height: 2rem; /* Vertically center text */
+}
+.ghost-top-right-bingo {
+    position: fixed; /* Fixes the element in place relative to the viewport */
+    top: 45px; /* Distance from the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the element's width to truly center it */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+}
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Center button horizontally */
+    border-top: none; /* Remove border if not needed */
+}
+.modal-footer .btn {
+    margin: 0; /* Remove default margin if needed */
+    
+}
+.modal-footer .btn-custom  {
+    color: white;
+    background-color: #f1563b;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .bingo-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns for medium screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .bingo-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for smaller screens */
+    }
+}
+
+
+@media (max-width: 576px) {
+    
+    .bingo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
+    }
+   
+    .ghost-top-right-bingo {
+        position: fixed; /* Fixes the element in place relative to the viewport */
+        top: 125px; /* Distance from the top of the viewport */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for the element's width to truly center it */
+        width: 60px; /* Adjust size as needed */
+        height: 60px; /* Adjust size as needed */
+    }
+}
+
+
+@media (max-width: 400px) {
+    .bingo-grid {
+        grid-template-columns: 1fr; /* Single column for the smallest screens */
+    }
+}
