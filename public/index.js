@@ -1,46 +1,16 @@
-// Function to open and toggle popup visibility
-function openQuestionPopup(popupId, button) {
-    let popup = document.getElementById(popupId);
-    let rect = button.getBoundingClientRect();
+// Object to track completion status of each popup
+let completedPopups = {
+    'popup-1': true, // popup-1 can be opened unconditionally
+    'popup-2': false,
+    'popup-3': false,
+    'popup-4': false,
+    'popup-5': false,
+    'popup-6': false,
+    'popup-7': false,
+    'popup-8': false
+};
 
-    // Get the viewport dimensions
-    let viewportWidth = window.innerWidth;
-    let viewportHeight = window.innerHeight;
-
-    // Get the popup dimensions
-    popup.style.display = "block"; // Temporarily display the popup to measure its size
-    let popupWidth = popup.offsetWidth;
-    let popupHeight = popup.offsetHeight;
-    popup.style.display = "none"; // Hide the popup again
-
-    // Calculate the center position
-    let centerX = (viewportWidth - popupWidth) / 2;
-    let centerY = (viewportHeight - popupHeight) / 2;
-
-    // Position the popup centered vertically and horizontally
-    popup.style.left = centerX + "px";
-    popup.style.top = centerY + "px";
-
-    // Show the popup
-    popup.style.display = "block";
-}
-
-// Function to close popup
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
-}
-
-// Close popup when clicking outside of it
-window.onclick = function(event) {
-    let popups = document.getElementsByClassName('popup');
-    for (let i = 0; i < popups.length; i++) {
-        if (event.target == popups[i]) {
-            popups[i].style.display = "none";
-        }
-    }
-}
-
-// Function to validate if all required fields are filled
+// Function to validate if all required fields are filled in the current popup
 function validateForm(popupId) {
     const popup = document.getElementById(popupId);
     const checkboxes = popup.querySelectorAll('input[type="checkbox"]');
@@ -60,25 +30,81 @@ function validateForm(popupId) {
     return isValid;
 }
 
+// Function to open and toggle popup visibility
+function openQuestionPopup(popupId, button) {
+    const previousPopupId = `popup-${parseInt(popupId.split('-')[1]) - 1}`;
+
+    // Check if the previous popup has been completed
+    if (popupId !== 'popup-1' && !completedPopups[previousPopupId]) {
+        alert("Please complete the previous section before proceeding.");
+        return;
+    }
+
+    // Hide the current popup if one is already open
+    const currentPopupId = getCurrentPopupId();
+    if (currentPopupId && currentPopupId !== popupId) {
+        document.getElementById(currentPopupId).style.display = 'none';
+    }
+
+    // Show the selected popup
+    const popup = document.getElementById(popupId);
+    popup.style.display = 'block';
+}
+
+// Function to get the ID of the current popup based on visibility
+function getCurrentPopupId() {
+    const popups = document.getElementsByClassName('popup');
+    for (let i = 0; i < popups.length; i++) {
+        if (popups[i].style.display === 'block') {
+            return popups[i].id;
+        }
+    }
+    return null;
+}
+
 // Function to handle form submission
 function handleSubmit(popupId, event) {
     if (!validateForm(popupId)) {
         event.preventDefault(); // Prevent form submission
         alert("Please fill out all required fields before submitting.");
+    } else {
+        // Mark the current popup as completed
+        completedPopups[popupId] = true;
+        
+        // Automatically open the next popup after successful submission
+        const nextPopupId = getNextPopupId(popupId);
+        if (nextPopupId) {
+            openQuestionPopup(nextPopupId, null); // Open the next popup
+        }
     }
 }
 
-// Attach event listeners to forms
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(event) {
-        const popupId = this.closest('.popup').id;
-        handleSubmit(popupId, event);
-    });
-});
+// Function to get the ID of the next popup
+function getNextPopupId(currentPopupId) {
+    const popups = Array.from(document.getElementsByClassName('popup'));
+    const currentIndex = popups.findIndex(popup => popup.id === currentPopupId);
+    if (currentIndex >= 0 && currentIndex < popups.length - 1) {
+        return popups[currentIndex + 1].id;
+    }
+    return null;
+}
 
+// Function to close popup
+function closePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
 
+// Close popup when clicking outside of it
+window.onclick = function(event) {
+    let popups = document.getElementsByClassName('popup');
+    for (let i = 0; i < popups.length; i++) {
+        if (event.target == popups[i]) {
+            popups[i].style.display = "none";
+        }
+    }
+}
 
-
+// Function to validate code and handle redirection
 document.addEventListener('DOMContentLoaded', function() {
     // Target the Networking Bingo link
     const bingoLink = document.querySelector('a[href="networkingBingo.html"]');
@@ -120,10 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-
-
-
-
+// Show popup when responses are filled
 document.addEventListener('DOMContentLoaded', function () {
     const responses = document.querySelectorAll('.bingo-cell input[type="text"]');
     const popup = new bootstrap.Modal(document.getElementById('popup'));
@@ -137,5 +160,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 popup.show();
             }
         });
+    });
+});
+
+// Attach event listeners to forms
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(event) {
+        const popupId = this.closest('.popup').id;
+        handleSubmit(popupId, event);
     });
 });
