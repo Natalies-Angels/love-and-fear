@@ -794,17 +794,6 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-.submitCode {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.submitCode:hover {
-    background-color: #45a049;
-}
 
 
 
