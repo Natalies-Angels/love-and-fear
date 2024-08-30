@@ -35,10 +35,10 @@ function openQuestionPopup(popupId, button) {
     const previousPopupId = `popup-${parseInt(popupId.split('-')[1]) - 1}`;
 
     // Check if the previous popup has been completed
-    if (popupId !== 'popup-1' && !completedPopups[previousPopupId]) {
-        alert("Please complete the previous section before proceeding.");
-        return;
-    }
+    // if (popupId !== 'popup-1' && !completedPopups[previousPopupId]) {
+    //     alert("Please complete the previous section before proceeding.");
+    //     return;
+    // }
 
     // Hide the current popup if one is already open
     const currentPopupId = getCurrentPopupId();

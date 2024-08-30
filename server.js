@@ -10,7 +10,10 @@ app.use(express.static('public'));
 // Middleware to parse URL-encoded bodies (from form submissions)
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Handle form submissions
+// Middleware to parse JSON bodies
+app.use(bodyParser.json()); // Add JSON body-parser
+
+// Handle general form submissions
 app.post('/submit', (req, res) => {
     const formData = req.body;
     const dataToAppend = Object.entries(formData)
@@ -30,8 +33,12 @@ app.get('/data.txt', (req, res) => {
     res.sendFile(path.join(__dirname, 'data.txt'));
 });
 
+
+
+// PERP-SUBMIT LOGIC
 app.post('/perp-submit', (req, res) => {
     const formData = req.body;
+    console.log('Received form data:', formData); // Debugging line
 
     // Format the data to append to the file
     const dataToAppend = Object.entries(formData)
@@ -53,17 +60,13 @@ app.post('/perp-submit', (req, res) => {
     });
 });
 
-
 // Basic route to confirm the server is running
 app.get('/', (req, res) => {
     res.send('Server is up and running!');
 });
-
-
 
 // Start the server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-

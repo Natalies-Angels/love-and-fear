@@ -5,8 +5,22 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: auto; /* Prevent scrolling if not needed */
+    /* overflow: auto;  *//* Prevent scrolling if not needed */
+    
 }
+/* Make sure the navbar is positioned relative */
+.navbar {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Center the logo absolutely within the navbar */
+#logo {
+    position: absolute;
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for exact center */
+}
+
 #submit-button
 {
     background-color: #f1563b;
@@ -45,6 +59,7 @@ body, html {
     position: absolute;
     bottom:  5px; /* Position at the top */
     left: 5px; /* Position at the right */
+    z-index: 5;
 }
 /* Floating Ghosts */
 /* Ensure the ghosts are positioned and have a higher z-index */
@@ -76,7 +91,10 @@ body, html {
     width: 150px; /* Adjust size as needed */
     height: 190px; /* Adjust size as needed */
 }
-
+.popup-content
+{
+    z-index: 100;
+}
 .ghost-bottom-left {
     bottom: 20%;
     left: 220px;
@@ -95,7 +113,7 @@ body, html {
 /* Popup Styles */
 .popup {
     position: fixed;
-    z-index: 9;
+   
     width: 100%;
     height: 100%;
     top: 0;
@@ -151,7 +169,7 @@ body, html {
     justify-items: center;
     align-items: center;
     max-width: 700px;
-    margin: 25px auto;
+    margin: auto;
     position: relative; /* Allow buttons to be positioned absolutely */
 }
 
@@ -239,6 +257,10 @@ button {
 }
 
 @media (max-width: 768px) {
+    body,html
+    {
+        overflow: scroll;
+    }
     
     .question-buttons {
         grid-template-columns: repeat(2, 1fr);
@@ -267,13 +289,13 @@ button {
     }
 
     #button-4 {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
     }
 
     #button-8 {
-        width: 120px;
-        height: 120px;
+        width: 170px;
+        height: 170px;
         transform: translateY(-40px);
     }
 
@@ -284,8 +306,8 @@ button {
     }
 
     #button-7 {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
         transform: translateY(-80px);
     }
 
@@ -331,13 +353,27 @@ button {
 }
 
 @media (max-width: 576px) {
-   
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body covers full viewport height */
+        margin: 0; /* Remove default margin */
+    }
+    .wrapper
+    {
+        flex: 1;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     .question-buttons {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 80px);
-        gap: 15px;
-        max-width: 400px;
-        margin: 75px auto;
+        grid-template-rows: repeat(4, 120px);
+        gap: 10px;
+        max-width: 500px;
+        /* margin: 120px auto; */
+        min-height: 100px;
+        padding: 10px;
+        
     }
 
     #button-1 {
@@ -353,11 +389,12 @@ button {
     #button-5 {
         width: 120px;
         height: 120px;
+        transform: translateY(-50px);
     }
 
     #button-4 {
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
         margin-right: 45px;
     }
 
@@ -372,57 +409,163 @@ button {
     }
 
     #button-7 {
-        width: 100px;
-        height: 100px;
+        width: 180px;
+        height: 180px;
     }
 
     #button-3 {
         width: 100px;
         height: 100px;
+        transform: translateY(-10px);
     }
     .ghost-top-left {
-        top: 120px;
+        top: 220px;
         left: 40px;
         width: 98px; /* Adjust size as needed */
         height: 81px; /* Adjust size as needed */
     }
     
-    .ghost-top-right {
-        top:  20%;
-        right: 20%;
-        width: 70px; /* Adjust size as needed */
-        height: 130px; /* Adjust size as needed */
-    }
     .ghost-top-right-2 {
         top: 140px;
         right: 80px;
-        width: 50px; /* Adjust size as needed */
+        width: 70px; /* Adjust size as needed */
         height: 70px; /* Adjust size as needed */
     }
     
-    .ghost-bottom-left {
-        bottom: 55%;
-        left: 25%;
-        width: 100px; /* Adjust size as needed */
-        height: 150px; /* Adjust size as needed */
-    }
     
-    .ghost-bottom-right {
-        bottom: 10px;
-        right: 10px;
-        width: 100px; /* Adjust size as needed */
-        height: 100px; /* Adjust size as needed */
-    }
 
 }
+
 @media (max-width : 1080px) {
-    .ghost-bottom-left {
-        bottom: 55%;
-        left: 25%;
-        width: 100px; /* Adjust size as needed */
-        height: 150px; /* Adjust size as needed */
+    
+    .question-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 120px);
+        gap: 20px;
+        max-width: 100%;
+        /* margin: 120px auto; */
+        min-height: 100px;
+        padding: 10px;
+        margin: 100px auto; 
+    }
+    .ghost-top-left {
+        top: 170px;
+        left: 40px;
+        width: 150px; /* Adjust size as needed */
+        height: 181px; /* Adjust size as needed */
+    }
+    
+    .ghost-top-right-2 {
+        top: 110px;
+        right: 80px;
+        width: 120px; /* Adjust size as needed */
+        height: 170px; /* Adjust size as needed */
     }
 }
+
+@media (max-width: 412px) {
+    .navbar {
+        
+        margin-bottom: 20px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body covers full viewport height */
+        margin: 0; /* Remove default margin */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    .wrapper {
+        flex: 1;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .question-buttons {
+        display: grid; /* Ensure grid layout is applied */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 100px); /* Adjusted height for smaller screens */
+        gap: 8px; /* Reduced gap for smaller screens */
+        max-width: 100%; /* Ensure container does not exceed viewport width */
+        padding: 8px;
+        margin: 50px auto; /* Center container */
+        box-sizing: border-box; /* Include padding and border in width/height calculations */
+    }
+
+    #button-1 {
+        width: 40px; /* Reduced size */
+        height: 40px; /* Reduced size */
+    }
+
+    #button-2 {
+        width: 50px; /* Reduced size */
+        height: 50px; /* Reduced size */
+    }
+
+    #button-5 {
+        width: 100px; /* Reduced size */
+        height: 100px; /* Reduced size */
+        transform: translateY(-30px); /* Adjusted transform */
+    }
+
+    #button-4 {
+        width: 100px; /* Reduced size */
+        height: 100px; /* Reduced size */
+        margin-right: 0; /* Removed margin-right to avoid overflow */
+    }
+
+    #button-8 {
+        width: 120px; /* Reduced size */
+        height: 130px; /* Reduced size */
+    }
+
+    #button-6 {
+        width: 50px; /* Reduced size */
+        height: 50px; /* Reduced size */
+    }
+
+    #button-7 {
+        width: 140px; /* Reduced size */
+        height: 140px; /* Reduced size */
+    }
+
+    #button-3 {
+        width: 80px; /* Reduced size */
+        height: 80px; /* Reduced size */
+        transform: translateY(-5px); /* Adjusted transform */
+    }
+
+    .ghost-top-left {
+        top: 180px; /* Adjusted position */
+        left: 30px; /* Adjusted position to fit better */
+        width: 110px; /* Reduced size */
+        height: 120px; /* Reduced size */
+        transform: rotate(-15deg); /* Equal to rotateZ(45deg) */
+    }
+
+    .ghost-top-right-2 {
+        top: 140px; /* Adjusted position */
+        right: 10px; /* Adjusted position */
+        width: 70px; /* Reduced size */
+        height: 70px; /* Reduced size */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* NETWORKING BINGO */
 /* General Styles for the Bingo Grid */
@@ -477,13 +620,21 @@ button {
 }
 .ghost-top-right-bingo {
     position: fixed; /* Fixes the element in place relative to the viewport */
-    top: 45px; /* Distance from the top of the viewport */
+    top: 105px; /* Distance from the top of the viewport */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for the element's width to truly center it */
     width: 100px; /* Adjust size as needed */
     height: 100px; /* Adjust size as needed */
 }
-
+.modal-footer .btn-custom  {
+    color: white;
+    background-color: #f1563b;
+}
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Center button horizontally */
+    border-top: none; /* Remove border if not needed */
+}
 
 /* Responsive Styles */
 @media (max-width: 1024px) {

@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="indexStyle.css">
     <title>love&fear questionnaire</title>
 </head>
-<body id="questionnaire-body">
+<body id="questionnaire-body" >
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Bootstrap" width="30" height="24" id="logo">
+            </a>
+        </div>
+    </nav>
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -23,7 +30,8 @@
     </ul>
 
     <!-- QUESTIONNAIRE -->
-    <div class="tab-pane fade show active" id="questionnaire-tab">
+    <!-- <div class="tab-pane fade show active" id="questionnaire-tab"> -->
+        <div class="wrapper">
             <div class="question-buttons">
                 <button id="button-1" onclick="openQuestionPopup('popup-1', this)"></button>
                 <button id="button-2" onclick="openQuestionPopup('popup-2', this)"></button>
@@ -38,17 +46,17 @@
             <!-- <img src="fearGhost.png" alt="" class="ghost ghost-top-right"> -->
             <!-- <img src="fearGhost2.png" alt="" class="ghost ghost-bottom-left"> -->
             <img src="loveGhost2.png" alt="" class="ghost ghost-top-right-2">
-
+        </div>
     <!-- POPUP 1 -->
         <div class="popup" id="popup-1">
                 <div class="popup-content">
                     <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-1')">&times;</span><br>
                         <div id="1q1">
-                            <p style="font-weight: bold;">To facilitate guided introspection on the dynamics of love, fear, safety, and security in intimate relationships, with a focus on identifying personal behaviors that may have caused harm.</p>
-                            <p>How do you define love in your relationships? (Pick a choice/choices that apply)</p>
+                            <p style="font-weight: bold; color: #f1563b;">This section explores the emotional aspects of love, focusing on how it influences your interactions and experiences within various environments. Understanding the dynamics of love can help identify the positive emotions that drive our actions and shape our relationships. </p>
+                            <p>How best do you define love in your relationships? (Pick a choice/choices that apply)</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="a-1q1" name="answer-1q1" value="A">
                                 <label class="form-check-label" for="a-1q1">A) Love is about self-sacrifice and prioritizing my partner’s needs.</label>
@@ -132,12 +140,12 @@
     <!-- POPUP 2 -->
         <div class="popup" id="popup-2">
                 <div class="popup-content">
-                    <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <img src="fearGhost.png" alt="" id="love-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-2')">&times;</span><br>
                         <div id="1q2">
-                            <p style="font-weight: bold;">To facilitate guided introspection on the dynamics of love, fear, safety, and security in intimate relationships, with a focus on identifying personal behaviors that may have caused harm.</p>
+                            <p style="font-weight: bold; color: #f1563b;">This section explores the emotional aspects of love, focusing on how it influences your interactions and experiences within various environments. Understanding the dynamics of love can help identify the positive emotions that drive our actions and shape our relationships. </p>
                             <p>How does your community or group of friends show love to keep everyone safe? (Pick a choice/choices that apply)</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="a-1q2" name="answer-1q2" value="A">
@@ -263,12 +271,14 @@
         <div class="popup" id="popup-3">
                 <div class="popup-content">
                     <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-3')">&times;</span><br>
             
                         <div id="1q3">
-                            <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                            <p style="font-weight: bold; color: #f1563b">This section delves into the emotional impact of fear, examining how it affects your thoughts, actions, and interactions. Fear can be a powerful motivator or deterrent, and understanding its role in your emotional landscape is crucial for personal growth. </p>
+
+                            <p style="font-weight: bold; font-style: italic; ;">Pick an Emoji/Emojis that apply</p>
                             <p>1. How does fear manifest in your intimate relationships?</p>
                             <label><input type="checkbox" id = "a-1q3"name="answer-1q3" value="😨 Fear of losing my partner."> 😨 Fear of losing my partner.</label><br>
                             <label><input type="checkbox" id = "b-1q3" name="answer-1q3" value="😔 Fear of being vulnerable or getting hurt."> 😔 Fear of being vulnerable or getting hurt.</label><br>
@@ -305,11 +315,12 @@
     <!-- POPUP 4 -->
         <div class="popup" id="popup-4">
                 <div class="popup-content">
-                    <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <img src="fearGhost.png" alt="" id="love-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-4')">&times;</span><br>
-                        <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                        <p style="font-weight: bold; color: #f1563b">This section delves into the emotional impact of fear, examining how it affects your thoughts, actions, and interactions. Fear can be a powerful motivator or deterrent, and understanding its role in your emotional landscape is crucial for personal growth. </p>
+                        <p style="font-weight: bold; font-style: italic;">Pick an Emoji/Emojis that apply</p>
                         <div id="1q4">
                             <p>How do you think fear changes the way people in your community act around each other?</p>
                             <label><input type="checkbox" id = "a-1q4" name="answer-1q4" value="🚶‍♂️ I notice that when people are afraid, they might avoid interacting with each other to stay safe."> 🚶‍♂️ I notice that when people are afraid, they might avoid interacting with each other to stay safe.</label><br>
@@ -357,12 +368,12 @@
         <div class="popup" id="popup-5">
                 <div class="popup-content">
                     <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-5')">&times;</span><br>
-            
+                        <p style="font-weight: bold;  color: #f1563b;">In this section, we will explore how your sense of safety influences your behavior and interactions. Safety, both physical and emotional, is a fundamental need that affects our choices and actions</p>
                         <div id="1q5">
-                            <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                            <p style="font-weight: bold; font-style: italic;">Pick an Emoji/Emojis that apply</p>
                             <p>1. What actions would you take to make your relationships more positive?</p>
                             <label><input type="checkbox" id = "a-1q5" name="answer-1q5" value="💖 I’d communicate openly and honestly about my feelings and needs."> 💖 I’d communicate openly and honestly about my feelings and needs.</label><br>
                             <label><input type="checkbox" id = "b-1q5" name="answer-1q5" value="🤗 I’d offer support and reassurance to strengthen our bond."> 🤗 I’d offer support and reassurance to strengthen our bond.</label><br>
@@ -400,12 +411,13 @@
         <div class="popup" id="popup-6">
                 <div class="popup-content">
                     <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-6')">&times;</span><br>
             
                         <div id="1q6">
-                            <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                            <p style="font-weight: bold;  color: #f1563b;">In this section, we will explore how your sense of safety influences your behavior and interactions. Safety, both physical and emotional, is a fundamental need that affects our choices and actions</p>
+                            <p style="font-weight: bold; font-style: italic;">Pick an Emoji/Emojis that apply</p>
                             <p>What is a key lesson you’ve learned about managing fears in your relationships?</p>
                             <label><input type="checkbox" id = "a-1q6" name="answer-1q6" value="💡 Recognizing and addressing fears openly helps in building trust and connection."> 💡 Recognizing and addressing fears openly helps in building trust and connection.</label><br>
                             <label><input type="checkbox" id = "b-1q6" name="answer-1q6" value="🌟 Being supportive and understanding towards each other’s fears strengthens the relationship."> 🌟 Being supportive and understanding towards each other’s fears strengthens the relationship.</label><br>
@@ -441,13 +453,14 @@
     <!--POPUP 7-->
         <div class="popup" id="popup-7">
                 <div class="popup-content">
-                    <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <img src="fearGhost.png" alt="" id="love-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-7')">&times;</span><br>
             
                         <div id="1q7">
-                            <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                            <p style="font-weight: bold;  color: #f1563b;">This section examines the role of security in shaping your behavior and decision-making. Security, whether physical, emotional, or financial, can have a profound impact on how you navigate the world around you. </p>
+                            <p style="font-weight: bold; font-style: italic;">Pick an Emoji/Emojis that apply</p>
                             <p>What strategies can you use to manage stress in your relationships?</p>
                             <label><input type="checkbox" id = "a-1q7" name="answer-1q7" value="🧘‍♂️ Practicing mindfulness and relaxation techniques."> 🧘‍♂️ Practicing mindfulness and relaxation techniques.</label><br>
                             <label><input type="checkbox" id = "b-1q7" name="answer-1q7" value="💬 Engaging in open and honest communication about stressors."> 💬 Engaging in open and honest communication about stressors.</label><br>
@@ -484,12 +497,13 @@
         <div class="popup" id="popup-8">
                 <div class="popup-content">
                     <img src="loveGhost.png" alt="" id="love-ghost">
-                    <img src="fearGhost.png" alt="" id="fear-ghost">
+                    <!-- <img src="fearGhost.png" alt="" id="fear-ghost"> -->
                     <form action="/submit" method="post">
                         <span class="close-btn" onclick="closePopup('popup-8')">&times;</span><br>
             
                         <div id="1q8">
-                            <p style="font-weight: bold; font-style: italic; color: #f1563b;">Pick an Emoji/Emojis that apply</p>
+                            <p style="font-weight: bold;  color: #f1563b;">This section examines the role of security in shaping your behavior and decision-making. Security, whether physical, emotional, or financial, can have a profound impact on how you navigate the world around you. </p>
+                            <p style="font-weight: bold; font-style: italic;">Pick an Emoji/Emojis that apply</p>
                             <p>What are some ways to foster trust in your relationships?</p>
                             <label><input type="checkbox" id = "a-1q8" name="answer-1q8" value="🤝 Consistently demonstrating reliability and honesty."> 🤝 Consistently demonstrating reliability and honesty.</label><br>
                             <label><input type="checkbox" id = "b-1q8"  name="answer-1q8" value="💬 Engaging in transparent and open communication."> 💬 Engaging in transparent and open communication.</label><br>
@@ -526,7 +540,7 @@
         <div class="ghost ghost-bottom-right"></div> -->
         
         
-</div>
+<!-- </div> -->
     <!-- <footer>
         <a href="https://www.geeksforgeeks.org/about/">
             About Us

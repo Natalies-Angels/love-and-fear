@@ -29,3 +29,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showSection(currentSection);
 });
+
+
+// PERPSCREENING SUBMIT LOGIC
+document.getElementById('assessmentForm').addEventListener('submit', function(event){
+    event.preventDefault(); // Prevents the default form submission behavior
+
+    const formData = new FormData(this); // Captures all the form data
+
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value; // Populates the data object with form entries
+    });
+
+    // Send the form data to the server
+    let serverUrl = '/perp-submit'; // Endpoint defined in your server.js
+
+    fetch(serverUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) // Convert the data object to a JSON string
+    })
+    .then(response => response.text()) // Handle the server's response as text
+    .then(result => {
+        console.log('Success:', result);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
