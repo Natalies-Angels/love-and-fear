@@ -17,18 +17,24 @@
         </div>
     </nav>
 
+    <div id="intro-container" class="intro-container">
+        <h2 style="font-weight: bold; color: #f1563b;">Welcome to the Love & Fear Data Collection session</h2><br>
+        <p style="font-size: larger;">Today, we'll reflect on how love and fear shape our relationships, exploring their impact on feelings of safety and security. This session is designed to help you identify and understand personal behaviors that may have caused harm, encouraging self-awareness and growth. Let's embark on this journey of introspection together, with the goal of fostering healthier, more loving connections.</p>
+        <button id="proceed-button" class="proceed-button">Proceed</button>
+    </div>
+
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link" href="perpScreening.html">Perp Screening</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="index.html">Questionnaire</a>
+            <a class="nav-link active" href="index.html">Data Collection</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="networkingBingo.html">Networking Bingo</a>
+            <a class="nav-link" href="networkingBingo.html">Community Action Planning</a>
         </li>
     </ul>
-
+    
     <!-- QUESTIONNAIRE -->
     <!-- <div class="tab-pane fade show active" id="questionnaire-tab"> -->
         <div class="wrapper">
@@ -130,7 +136,8 @@
                             </div>
                         </div>
                 
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">As you reflect on your responses, consider how the dynamics of love influence not just your personal feelings but also your behavior and decisions in your daily life.</p>
                     </form>
                 </div>
         </div>
@@ -260,7 +267,9 @@
                                     <input type="text"  placeholder="Please specify">
                                 </div>    
                         </div>
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">As you reflect on your responses, consider how the dynamics of love influence not just your personal feelings but also your behavior and decisions in your daily life.</p>
+
                     </form>             
                 </div>              
         </div>
@@ -305,7 +314,8 @@
                             <label>🤔 Other: <input type="text" id = "e-3q3" name="answer-e3q3-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;"> After completing this section, take a moment to think about how fear manifests in your life and how it may be influencing your behavior and decision-making processes</p>
                     </form>
                 </div>
         </div>
@@ -357,7 +367,9 @@
                             <label>🤔 Other: <input type="text" id = "e-4q4" name="answer-e4q4-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;"> After completing this section, take a moment to think about how fear manifests in your life and how it may be influencing your behavior and decision-making processes</p>
+
                     </form>
                 </div>
         </div>
@@ -400,7 +412,8 @@
                             <label>🤔 Other: <input type="text" id = "e-3q5" name="answer-e3q5-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">Reflect on how your perception of safety shapes your behavior and interactions with others, and consider any steps you might take to enhance your sense of security in different environments.</p>
                     </form>
                 </div>
         </div>
@@ -444,7 +457,8 @@
                             <label>🤔 Other: <input type="text" id = "e-3q6" name="answer-e3q6-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">Reflect on how your perception of safety shapes your behavior and interactions with others, and consider any steps you might take to enhance your sense of security in different environments.</p>
                     </form>
                 </div>
         </div>
@@ -487,7 +501,8 @@
                             <label>🤔 Other: <input type="text" id = "e-1q7" name="answer-e3q7-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                        <div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> 
+                        <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">As you conclude this section, think about how your sense of security or insecurity influences your actions and consider ways to strengthen your security in areas that may need attention.</p>
                     </form>
                 </div>
         </div>
@@ -530,7 +545,8 @@
                             <label>🤔 Other: <input type="text" id = "e-3q8" name="answer-e3q8-other"></label>
                         </div>
             
-                        <input type="submit" value="done" id="submit-button">
+                       <div id="popup-submit"><div id="popup-submit"><input type="submit" value="done" id="submit-button"></div> </div> 
+                       <p style="font-weight: bold; color: #f1563b; margin-top: 20px;">As you conclude this section, think about how your sense of security or insecurity influences your actions and consider ways to strengthen your security in areas that may need attention.</p>
                     </form>
                 </div>
         </div>        
@@ -558,7 +574,7 @@
         <div class="modal-content" style="background-color:black; ">
             <span class="close-modal">&times;</span>
             <img src="network-popup.png" alt="Enter Code Prompt" style="width:100%;">
-            <input type="text" id="accessCode" placeholder="1234 is the passcode(to be changed before event)" style="margin: auto;">
+            <input type="text" id="accessCode" placeholder="🗝️ claim your access..." style="margin: auto;">
             <button id="submitCode" style="background-color: #f1563b; width: 50%; margin: 10px auto;border-radius: 8px; padding: 10px 10px;">enter</button>
             <p id="error-message" style="color:red; display:none;">Incorrect code. Please try again.</p>
         </div>

@@ -21,14 +21,6 @@ body, html {
     transform: translateX(-50%); /* Adjust for exact center */
 }
 
-#submit-button
-{
-    background-color: #f1563b;
-    color: white;
-    border: none;
-    border-radius: 10%;
-    padding: 10px;
-}
 .nav-link
 {
     color: black;
@@ -36,6 +28,30 @@ body, html {
 .nav-link:hover
 {
     color: white;
+}
+
+.intro-container {
+    text-align: center;
+    padding: 150px;
+    margin: 100px auto;
+    max-width: 80%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    
+}
+
+.proceed-button {
+    background-color: #f1563b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.proceed-button:hover {
+    background-color: #e0452a;
 }
 #questionnaire-body {
     margin: 0;
@@ -135,11 +151,23 @@ body, html {
     max-width: 900px;
     border-radius: 10px;
     position: relative;
+    display: flex;
+    flex-direction: column; /* Ensure the button stacks vertically */
+    align-items: center; /* Center the button horizontally */
+    justify-content: center; /* Center the button vertically */
 }
 
 #submit-button {
-    float: right; /* Or use one of the other methods above */
-    margin-top: 10px; /* Optional: adds some space above the button */
+   
+        margin-top: 20px; /* Optional: adds some space above the button */
+        background-color: #f1563b;
+        color: white;
+        border: none;
+        border-radius: 16px;
+        padding: 10px;
+        cursor: pointer; /* Optional: Changes the cursor to a pointer */
+        width: 20%;
+    
 }
 
 .close-btn {
@@ -172,7 +200,11 @@ body, html {
     margin: auto;
     position: relative; /* Allow buttons to be positioned absolutely */
 }
-
+#popup-submit
+{
+    text-align: center;
+    
+}
 button {
     background: none;
     border: none;
@@ -254,6 +286,10 @@ button {
     grid-column: 2;
     grid-row: 4;
     transform: translateY(-20px);
+}
+.popup-content input[type="text"]
+{
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -493,7 +529,10 @@ button {
         margin: 50px auto; /* Center container */
         box-sizing: border-box; /* Include padding and border in width/height calculations */
     }
-
+    .popup-content
+    {
+        padding: 50px;
+    }
     #button-1 {
         width: 40px; /* Reduced size */
         height: 40px; /* Reduced size */
@@ -550,6 +589,10 @@ button {
         right: 10px; /* Adjusted position */
         width: 70px; /* Reduced size */
         height: 70px; /* Reduced size */
+    }
+    #submit-button{
+        width: 50%;
+        margin: 20px auto;
     }
 }
 
@@ -738,3 +781,11 @@ input[type=text] {
 .submitCode:hover {
     background-color: #45a049;
 }
+
+
+
+
+
+
+
+

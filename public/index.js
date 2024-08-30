@@ -108,23 +108,23 @@ window.onclick = function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     // Target the Networking Bingo link
     const bingoLink = document.querySelector('a[href="networkingBingo.html"]');
-    const modal = document.getElementById('codeModal');
+    const passcodeModal = document.getElementById('codeModal');
     const closeModal = document.querySelector('.close-modal');
     const submitCodeButton = document.getElementById('submitCode');
     const errorMessage = document.getElementById('error-message');
     
     // Example correct code
-    const correctCode = "1234"; // Change this to your desired access code
+    const correctCode = "Safeinlove"; // Change this to your desired access code
     
     // Show modal on Networking Bingo link click
     bingoLink.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the link from navigating
-        modal.style.display = 'block'; // Show the modal
+        passcodeModal.style.display = 'block'; // Show the modal
     });
     
     // Close modal when the user clicks on the 'X'
     closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
+        passcodeModal.style.display = 'none';
     });
     
     // Handle code submission
@@ -140,16 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close modal if user clicks outside of it
     window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+        if (event.target === passcodeModal) {
+            passcodeModal.style.display = 'none';
         }
     };
 });
 
-// Show popup when responses are filled
+// SHOW BINGO POPUP
 document.addEventListener('DOMContentLoaded', function () {
     const responses = document.querySelectorAll('.bingo-cell input[type="text"]');
-    const popup = new bootstrap.Modal(document.getElementById('popup'));
+    const bingoPopup = new bootstrap.Modal(document.getElementById('popup'));
 
     responses.forEach(response => {
         response.addEventListener('input', () => {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const nonEmptyResponses = Array.from(responses).filter(input => input.value.trim() !== '').length;
 
             if (nonEmptyResponses >= 7) {
-                popup.show();
+                bingoPopup.show();
             }
         });
     });
@@ -169,4 +169,16 @@ document.querySelectorAll('form').forEach(form => {
         const popupId = this.closest('.popup').id;
         handleSubmit(popupId, event);
     });
+});
+
+
+
+
+
+document.getElementById("proceed-button").addEventListener("click", function() {
+    // Hide the intro container
+    document.getElementById("intro-container").style.display = "none";
+    
+    // Show the questionnaire container
+    document.getElementById("questionnaire-container").style.display = "block";
 });
