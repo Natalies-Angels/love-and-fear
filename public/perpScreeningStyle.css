@@ -17,6 +17,15 @@ body {
     
     
 }
+.navbar {
+    position: relative;
+    margin-bottom: 20px;
+}
+#logo {
+    position: absolute;
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for exact center */
+}
 .nav-link
 {
     color: black;
