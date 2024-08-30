@@ -92,3 +92,20 @@ fieldset {
 h4{
     margin-bottom: 50px;
 }
+@media(max-width: 576px)
+{
+    #prevBtn
+{
+    color: #f1563b;
+    background-color: white;
+    width: 20%;
+    font-size: larger;
+}
+#nextBtn
+{
+    background-color: #f1563b;
+    color: white;
+    width: 20%;
+    font-size: larger;
+}
+}

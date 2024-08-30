@@ -463,7 +463,7 @@ button {
     }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 455px) {
     .navbar {
         
         margin-bottom: 20px;
