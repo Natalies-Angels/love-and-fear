@@ -538,7 +538,7 @@ button {
     }
 
     .ghost-top-left {
-        top: 180px; /* Adjusted position */
+        top: 130px; /* Adjusted position */
         left: 30px; /* Adjusted position to fit better */
         width: 110px; /* Reduced size */
         height: 120px; /* Reduced size */

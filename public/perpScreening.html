@@ -247,11 +247,20 @@
             <button type="button" class="btn" id="nextBtn">Next</button>
         </div>
 
-       
+        <div id="codeModal" class="modal" >
+            <div class="modal-content" style="background-color:black; ">
+                <span class="close-modal">&times;</span>
+                <img src="network-popup.png" alt="Enter Code Prompt" style="width:100%;">
+                <input type="text" id="accessCode" placeholder="1234 is the passcode(to be changed before event)" style="margin: auto;">
+                <button id="submitCode" style="background-color: #f1563b; width: 50%; margin: 10px auto;border-radius: 8px; padding: 10px 10px;">enter</button>
+                <p id="error-message" style="color:red; display:none;">Incorrect code. Please try again.</p>
+            </div>
+        </div>
         
     </form>
 
     <script src="perpScreening.js"></script>
+    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
