@@ -43,7 +43,7 @@ document.getElementById('assessmentForm').addEventListener('submit', function(ev
     });
 
     // Send the form data to the server
-    let serverUrl = '/perp-submit'; // Endpoint defined in your server.js
+    let serverUrl = '/perpSubmit'; // Endpoint defined in your server.js
 
     fetch(serverUrl, {
         method: 'POST',
@@ -60,4 +60,3 @@ document.getElementById('assessmentForm').addEventListener('submit', function(ev
         console.error('Error:', error);
     });
 });
-

@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 
 const app = express();
@@ -10,42 +10,51 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle form data for perpScreeningData.txt
-app.post('/perp-submit', (req, res) => {
-    const data = JSON.stringify(req.body, null, 2);
-    fs.appendFile('perpScreeningData.txt', `${data}\n`, (err) => {
-        if (err) {
-            console.error('Error writing to perpScreeningData.txt:', err);
-            return res.status(500).json({ message: 'Internal Server Error' });
-        }
+app.post('/perpSubmit', async (req, res, next) => {
+    try {
+        const data = JSON.stringify(req.body, null, 2);
+        const filePath = path.join(__dirname, 'perpScreeningData.txt');
+        await fs.appendFile(filePath, `${data}\n`);
         res.redirect('/perpScreening.html');
-    });
+    } catch (err) {
+        console.error('Error writing to perpScreeningData.txt:', err);
+        next(err);
+    }
 });
 
 // Handle form data for data.txt
-app.post('/submitData', (req, res) => {
-    const data = JSON.stringify(req.body, null, 2);
-    fs.appendFile('data.txt', `${data}\n`, (err) => {
-        if (err) {
-            console.error('Error writing to data.txt:', err);
-            return res.status(500).json({ message: 'Internal Server Error' });
-        }
+app.post('/submitData', async (req, res, next) => {
+    try {
+        const data = JSON.stringify(req.body, null, 2);
+        const filePath = path.join(__dirname, 'data.txt');
+        await fs.appendFile(filePath, `${data}\n`);
         res.redirect('/index.html#wrapper');
-    });
+    } catch (err) {
+        console.error('Error writing to data.txt:', err);
+        next(err);
+    }
 });
 
 // Handle form data for networkingBingoData.txt
-app.post('/submitBingoData', (req, res) => {
-    const data = JSON.stringify(req.body, null, 2);
-    fs.appendFile('networkingBingoData.txt', `${data}\n`, (err) => {
-        if (err) {
-            console.error('Error writing to networkingBingoData.txt:', err);
-            return res.status(500).json({ message: 'Internal Server Error' });
-        }
+app.post('/submitBingoData', async (req, res, next) => {
+    try {
+        const data = JSON.stringify(req.body, null, 2);
+        const filePath = path.join(__dirname, 'networkingBingoData.txt');
+        await fs.appendFile(filePath, `${data}\n`);
         res.redirect('/networkingBingo.html');
-    });
+    } catch (err) {
+        console.error('Error writing to networkingBingoData.txt:', err);
+        next(err);
+    }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Internal Server Error:', err);
+    res.status(500).json({ message: 'Internal Server Error' });
 });
 
 // Start the server
