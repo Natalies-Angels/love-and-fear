@@ -82,3 +82,9 @@ answer-e3q2-text:
   "answer-e2q8-other": "",
   "answer-e3q8-other": ""
 }
+{
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-3q1": "C",
+  "answer-e3q1-text": ""
+}

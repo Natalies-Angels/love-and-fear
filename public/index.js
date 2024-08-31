@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Attach event listeners to forms
 document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', function(event) {
-        const popupId = this.closest('.bingo-popup').id;
+        const popupId = this.closest('.popup').id;
         handleSubmit(popupId, event);
     });
 });
