@@ -26,7 +26,7 @@ app.post('/perpSubmit', async (req, res, next) => {
 });
 
 // Handle form data for data.txt
-app.post('/submitData', async (req, res, next) => {
+app.post('/submit', async (req, res, next) => {
     try {
         const data = JSON.stringify(req.body, null, 2);
         const filePath = path.join(__dirname, 'data.txt');
