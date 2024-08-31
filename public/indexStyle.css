@@ -19,6 +19,8 @@ body, html {
     position: absolute;
     left: 50%; /* Move to the center horizontally */
     transform: translateX(-50%); /* Adjust for exact center */
+    width: 25px;
+    height: 25px;
 }
 
 .nav-link
@@ -524,6 +526,11 @@ button {
 }
 
 @media (max-width: 455px) {
+    #logo
+    {
+        width: 15px;
+        height: 15px;
+    }
     .navbar {
         
         margin-bottom: 20px;
@@ -621,20 +628,8 @@ button {
 }
 
 
+/* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO *//* NETWORKING BINGO */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* NETWORKING BINGO */
 /* General Styles for the Bingo Grid */
 .networkingBingo-body
 {
@@ -644,8 +639,8 @@ button {
     overflow: scroll;
 }
 .bingo-content {
-    padding: 6rem;
-    margin: auto;
+    padding: 2rem;
+    margin: 80px auto;
     max-width: 100%;
 }
 
@@ -715,13 +710,19 @@ button {
     .bingo-grid {
         grid-template-columns: repeat(3, 1fr); /* Three columns for smaller screens */
     }
+    #intro-container
+    {
+        margin-bottom: 350px;
+        padding: 80px;
+    }
 }
 
 
-@media (max-width: 576px) {
-    
+@media (max-width: 650px) {
+       
     .bingo-grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns for very small screens */
+        padding: 1rem;
     }
    
     .ghost-top-right-bingo {
@@ -732,12 +733,26 @@ button {
         width: 60px; /* Adjust size as needed */
         height: 60px; /* Adjust size as needed */
     }
+    #intro-container
+    {
+        margin-bottom: 350px;
+        padding: 70px;
+    }
+    
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 455px) {
     .bingo-grid {
-        grid-template-columns: 1fr; /* Single column for the smallest screens */
+        grid-template-columns:repeat(2, 1fr); /* Single column for the smallest screens */
+        padding: 1 rem;
+    }
+    .bingo-content{
+        margin-top: 40px;
+    }
+    .ghost-top-right-bingo
+    {
+        top: 145px;
     }
 }
 

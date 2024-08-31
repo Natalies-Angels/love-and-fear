@@ -104,7 +104,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 4px) {
     .bingo-grid {
         grid-template-columns: 1fr; /* Single column for the smallest screens */
     }

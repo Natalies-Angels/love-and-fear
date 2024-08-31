@@ -1,72 +1,54 @@
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
-// Serve static files from the "public" directory
-app.use(express.static('public'));
-
-// Middleware to parse URL-encoded bodies (from form submissions)
-app.use(bodyParser.urlencoded({ extended: true }));
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON bodies
-app.use(bodyParser.json()); // Add JSON body-parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Handle general form submissions
-app.post('/submit', (req, res) => {
-    const formData = req.body;
-    const dataToAppend = Object.entries(formData)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join('\n');
+// Serve static files
+app.use(express.static('public'));
 
-    // Append the data to a file
-    fs.appendFile('data.txt', dataToAppend + '\n', (err) => {
-        if (err) throw err;
-        console.log('Data was appended to file!');
-        res.redirect('/');
-    });
-});
-
-// Serve data.txt file
-app.get('/data.txt', (req, res) => {
-    res.sendFile(path.join(__dirname, 'data.txt'));
-});
-
-
-
-// PERP-SUBMIT LOGIC
-app.post('/perp-submit', (req, res) => {
-    const formData = req.body;
-    console.log('Received form data:', formData); // Debugging line
-
-    // Format the data to append to the file
-    const dataToAppend = Object.entries(formData)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join('\n');
-
-    // Path to the file
-    const filePath = path.join(__dirname, 'perpScreeningData.txt');
-
-    // Append the data to the file
-    fs.appendFile(filePath, dataToAppend + '\n', (err) => {
+// Handle form data for perpScreeningData.txt
+app.post('/submitPerpScreeningData', (req, res) => {
+    const data = JSON.stringify(req.body, null, 2);
+    fs.appendFile('perpScreeningData.txt', `${data}\n`, (err) => {
         if (err) {
-            console.error('Error writing to file:', err);
-            res.status(500).send('Error saving data.');
-            return;
+            console.error('Error writing to perpScreeningData.txt:', err);
+            return res.status(500).json({ message: 'Internal Server Error' });
         }
-        console.log('Data was appended to file!');
-        res.send('Form submitted and data saved successfully!');
+        res.status(200).json({ message: 'Data successfully saved to perpScreeningData.txt' });
     });
 });
 
-// Basic route to confirm the server is running
-app.get('/', (req, res) => {
-    res.send('Server is up and running!');
+// Handle form data for data.txt
+app.post('/submitData', (req, res) => {
+    const data = JSON.stringify(req.body, null, 2);
+    fs.appendFile('data.txt', `${data}\n`, (err) => {
+        if (err) {
+            console.error('Error writing to data.txt:', err);
+            return res.status(500).json({ message: 'Internal Server Error' });
+        }
+        res.status(200).json({ message: 'Data successfully saved to data.txt' });
+    });
+});
+
+// Handle form data for networkingBingoData.txt
+app.post('/submitBingoData', (req, res) => {
+    const data = JSON.stringify(req.body, null, 2);
+    fs.appendFile('networkingBingoData.txt', `${data}\n`, (err) => {
+        if (err) {
+            console.error('Error writing to networkingBingoData.txt:', err);
+            return res.status(500).json({ message: 'Internal Server Error' });
+        }
+        res.status(200).json({ message: 'Data successfully saved to networkingBingoData.txt' });
+    });
 });
 
 // Start the server
-const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

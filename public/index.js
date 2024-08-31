@@ -146,19 +146,48 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-// SHOW BINGO POPUP
+
+
+// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP
+
 document.addEventListener('DOMContentLoaded', function () {
     const responses = document.querySelectorAll('.bingo-cell input[type="text"]');
-    const bingoPopup = new bootstrap.Modal(document.getElementById('popup'));
+    const bingoPopup = new bootstrap.Modal(document.getElementById('bingo-popup'));
 
     responses.forEach(response => {
         response.addEventListener('input', () => {
-            const filledResponses = document.querySelectorAll('.bingo-cell input[type="text"]').length;
             const nonEmptyResponses = Array.from(responses).filter(input => input.value.trim() !== '').length;
 
             if (nonEmptyResponses >= 7) {
                 bingoPopup.show();
             }
+        });
+    });
+
+    // Handle form submission and send data to the server
+    document.getElementById("submitResponsesBtn").addEventListener("click", function() {
+        // Collect the responses
+        const bingoData = {};
+        responses.forEach((response, index) => {
+            bingoData[`response_${index + 1}`] = response.value.trim();
+        });
+
+        // Send the data to the server
+        fetch("/submitBingoData", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bingoData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Success:", data);
+            // Close the modal after successful submission
+            bingoPopup.hide();
+        })
+        .catch((error) => {
+            console.error("Error:", error);
         });
     });
 });
@@ -170,6 +199,7 @@ document.querySelectorAll('form').forEach(form => {
         handleSubmit(popupId, event);
     });
 });
+
 
 
 
