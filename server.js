@@ -18,6 +18,12 @@ app.get('/data.txt', (req, res) => {
     res.sendFile(filePath);
 });
 
+// Serve networkingBingoData.txt directly via a GET request
+app.get('/networkingBingoData.txt', (req, res) => {
+    const filePath = path.join(__dirname, 'networkingBingoData.txt');
+    res.sendFile(filePath);
+});
+
 // Handle form data for perpScreeningData.txt
 app.post('/perpSubmit', async (req, res, next) => {
     try {

@@ -34,6 +34,12 @@ function validateForm(popupId) {
 function openQuestionPopup(popupId, button) {
     const previousPopupId = `popup-${parseInt(popupId.split('-')[1]) - 1}`;
 
+    // Check if the previous popup has been completed
+    // if (popupId !== 'popup-1' && !completedPopups[previousPopupId]) {
+    //     alert("Please complete the previous section before proceeding.");
+    //     return;
+    // }
+
     // Hide the current popup if one is already open
     const currentPopupId = getCurrentPopupId();
     if (currentPopupId && currentPopupId !== popupId) {
@@ -58,50 +64,19 @@ function getCurrentPopupId() {
 
 // Function to handle form submission
 function handleSubmit(popupId, event) {
-    event.preventDefault(); // Prevent the default form submission
-
     if (!validateForm(popupId)) {
+        event.preventDefault(); // Prevent form submission
         alert("Please fill out all required fields before submitting.");
-        return;
-    }
-
-    const form = document.getElementById(popupId).querySelector('form');
-    const formData = new FormData(form);
-    const data = {};
-
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-
-    // Submit the form data via fetch to the server
-    fetch('/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (response.ok) {
-            // Handle redirect or response if needed
-            return response.text(); // Assuming server sends a redirect URL or a confirmation message
-        } else {
-            throw new Error('Network response was not ok');
-        }
-    })
-    .then(data => {
+    } else {
         // Mark the current popup as completed
         completedPopups[popupId] = true;
-
+        
         // Automatically open the next popup after successful submission
         const nextPopupId = getNextPopupId(popupId);
         if (nextPopupId) {
             openQuestionPopup(nextPopupId, null); // Open the next popup
         }
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-    });
+    }
 }
 
 // Function to get the ID of the next popup
@@ -123,19 +98,54 @@ function closePopup(popupId) {
 window.onclick = function(event) {
     let popups = document.getElementsByClassName('popup');
     for (let i = 0; i < popups.length; i++) {
-        if (event.target === popups[i]) {
+        if (event.target == popups[i]) {
             popups[i].style.display = "none";
         }
     }
 }
 
-// Event listener for the form submission
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(event) {
-        const popupId = this.closest('.popup').id;
-        handleSubmit(popupId, event);
+// Function to validate code and handle redirection
+document.addEventListener('DOMContentLoaded', function() {
+    // Target the Networking Bingo link
+    const bingoLink = document.querySelector('a[href="networkingBingo.html"]');
+    const passcodeModal = document.getElementById('codeModal');
+    const closeModal = document.querySelector('.close-modal');
+    const submitCodeButton = document.getElementById('submitCode');
+    const errorMessage = document.getElementById('error-message');
+    
+    // Example correct code
+    const correctCode = "Safeinlove"; // Change this to your desired access code
+    
+    // Show modal on Networking Bingo link click
+    bingoLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the link from navigating
+        passcodeModal.style.display = 'block'; // Show the modal
     });
+    
+    // Close modal when the user clicks on the 'X'
+    closeModal.addEventListener('click', function() {
+        passcodeModal.style.display = 'none';
+    });
+    
+    // Handle code submission
+    submitCodeButton.addEventListener('click', function() {
+        const enteredCode = document.getElementById('accessCode').value;
+        
+        if (enteredCode === correctCode) {
+            window.location.href = bingoLink.href; // Navigate to the Networking Bingo page
+        } else {
+            errorMessage.style.display = 'block'; // Show error message
+        }
+    });
+    
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target === passcodeModal) {
+            passcodeModal.style.display = 'none';
+        }
+    };
 });
+
 
 
 // SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP// SHOW BINGO POPUP
