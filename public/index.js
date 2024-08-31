@@ -210,5 +210,5 @@ document.getElementById("proceed-button").addEventListener("click", function() {
     document.getElementById("intro-container").style.display = "none";
     
     // Show the questionnaire container
-    document.getElementById("questionnaire-container").style.display = "block";
+    document.getElementById("wrapper").style.display = "block";
 });

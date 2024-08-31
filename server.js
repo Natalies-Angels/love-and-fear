@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Handle form data for perpScreeningData.txt
-app.post('/submitPerpScreeningData', (req, res) => {
+app.post('/perp-submit', (req, res) => {
     const data = JSON.stringify(req.body, null, 2);
     fs.appendFile('perpScreeningData.txt', `${data}\n`, (err) => {
         if (err) {
@@ -32,7 +32,7 @@ app.post('/submitData', (req, res) => {
             console.error('Error writing to data.txt:', err);
             return res.status(500).json({ message: 'Internal Server Error' });
         }
-        res.redirect('/');
+        res.redirect('/index.html#wrapper');
     });
 });
 

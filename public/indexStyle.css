@@ -397,12 +397,12 @@ button {
         min-height: 100vh; /* Ensure body covers full viewport height */
         margin: 0; /* Remove default margin */
     }
-    .wrapper
+    /* #wrapper
     {
         flex: 1;
         margin-bottom: 0;
         padding-bottom: 0;
-    }
+    } */
     .intro-container {
         text-align: center;
         padding: 30px;

@@ -41,3 +41,39 @@ answer-e3q2-text:
   "answer-e2q1-text": "",
   "answer-e3q1-text": ""
 }
+{
+  "answer-1q1": "E",
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-e3q1-text": ""
+}
+{
+  "answer-1q1": "E",
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-e3q1-text": ""
+}
+{
+  "answer-1q1": "E",
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-e3q1-text": ""
+}
+{
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-3q1": "E",
+  "answer-e3q1-text": ""
+}
+{
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-3q1": "D",
+  "answer-e3q1-text": ""
+}
+{
+  "answer-1q1": "C",
+  "answer-e1q1-text": "",
+  "answer-e2q1-text": "",
+  "answer-e3q1-text": ""
+}
