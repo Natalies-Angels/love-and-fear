@@ -20,7 +20,7 @@ app.post('/submitPerpScreeningData', (req, res) => {
             console.error('Error writing to perpScreeningData.txt:', err);
             return res.status(500).json({ message: 'Internal Server Error' });
         }
-        res.status(200).json({ message: 'Data successfully saved to perpScreeningData.txt' });
+        res.redirect('/perpScreening.html');
     });
 });
 
@@ -32,7 +32,7 @@ app.post('/submitData', (req, res) => {
             console.error('Error writing to data.txt:', err);
             return res.status(500).json({ message: 'Internal Server Error' });
         }
-        res.status(200).json({ message: 'Data successfully saved to data.txt' });
+        res.redirect('/');
     });
 });
 
@@ -44,7 +44,7 @@ app.post('/submitBingoData', (req, res) => {
             console.error('Error writing to networkingBingoData.txt:', err);
             return res.status(500).json({ message: 'Internal Server Error' });
         }
-        res.status(200).json({ message: 'Data successfully saved to networkingBingoData.txt' });
+        res.redirect('/networkingBingo.html');
     });
 });
 
