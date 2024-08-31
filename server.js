@@ -9,8 +9,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve data.txt directly via a GET request
+app.get('/data.txt', (req, res) => {
+    const filePath = path.join(__dirname, 'data.txt');
+    res.sendFile(filePath);
+});
 
 // Handle form data for perpScreeningData.txt
 app.post('/perpSubmit', async (req, res, next) => {
